@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Cricket Score</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a7a3c">
+  <!-- iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cricket">
+  <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+
+  <!-- ── App header ──────────────────────────────────────── -->
+  <header class="app-header">
+    <span class="app-title">Cricket Score</span>
+    <span class="match-event-label" id="match-event-label"></span>
+    <span class="header-user" id="header-user"></span>
+    <button class="btn-icon" id="btn-open-settings" title="Settings">&#9881;</button>
+    <button class="btn-icon" id="btn-logout" title="Sign Out" style="display:none">&#10148;</button>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: LOGIN
+  ════════════════════════════════════════════════════════ -->
+  <div id="screen-login">
+    <div class="login-wrap">
+      <div class="login-card">
+        <p class="login-logo">&#127984;</p>
+        <h1 class="login-title">Cricket Score</h1>
+        <form id="form-login" class="login-form" novalidate>
+          <label class="login-label">Username
+            <input type="text" id="input-login-user" class="login-input"
+                   autocomplete="username" autocapitalize="none" autocorrect="off">
+          </label>
+          <label class="login-label">Password
+            <input type="password" id="input-login-pass" class="login-input"
+                   autocomplete="current-password">
+          </label>
+          <p id="login-msg" class="login-msg"></p>
+          <button type="submit" class="btn-primary">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: HOME
+  ════════════════════════════════════════════════════════ -->
+  <div id="screen-home" style="display:none">
+
+    <div class="home-start">
+      <div class="setup-card">
+        <div class="setup-header">
+          <span class="setup-icon">&#127984;</span>
+          <span class="setup-title">New Match</span>
+        </div>
+        <label class="setup-label" for="input-match-name">Match Name
+          <input class="setup-input" id="input-match-name" type="text"
+                 autocomplete="off" autocapitalize="words">
+        </label>
+        <label class="setup-label" for="select-overs">Overs per Innings
+          <select id="select-overs" class="setup-input setup-select"></select>
+        </label>
+        <button class="btn-start-large" id="btn-start-match">&#9654;&ensp;Start New Match</button>
+      </div>
+    </div>
+
+    <div class="home-past">
+      <p class="section-label">Recent Matches</p>
+      <div id="past-matches-list"></div>
+    </div>
+
+  </div><!-- /screen-home -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: SCORING  (live match)
+  ════════════════════════════════════════════════════════ -->
+  <div id="screen-scoring" style="display:none">
+
+    <!-- Innings bar — editable team names, both scores always visible -->
+    <div class="innings-bar">
+      <div class="inn-side" id="inn-side-0">
+        <input class="inn-name-input" id="inn-name-0" type="text"
+               placeholder="Team A" autocomplete="off" maxlength="30">
+        <div class="inn-score-line">
+          <span class="inn-score" id="inn-score-0">—</span>
+          <span class="inn-overs" id="inn-overs-0"></span>
+        </div>
+      </div>
+      <span class="inn-vs">vs</span>
+      <div class="inn-side inn-right" id="inn-side-1">
+        <input class="inn-name-input inn-name-right" id="inn-name-1" type="text"
+               placeholder="Team B" autocomplete="off" maxlength="30">
+        <div class="inn-score-line inn-score-right">
+          <span class="inn-score" id="inn-score-1">—</span>
+          <span class="inn-overs" id="inn-overs-1"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Target strip (second innings only) -->
+    <div class="target-bar" id="target-bar" style="display:none"></div>
+
+    <!-- Batters + over info (stacked mobile / side-by-side desktop) -->
+    <div class="batters-over-panel">
+
+      <div class="batters-col">
+        <div class="batter-row batter-striker" id="striker-row">
+          <span class="bat-icon">&#127984;</span>
+          <span class="batter-name" id="striker-name">—</span>
+          <span class="batter-score" id="striker-score"></span>
+        </div>
+        <div class="batter-row" id="nonstriker-row">
+          <span class="bat-icon"></span>
+          <span class="batter-name" id="nonstriker-name">—</span>
+          <span class="batter-score" id="nonstriker-score"></span>
+        </div>
+      </div>
+
+      <!-- Over info: always in DOM, CSS controls placement -->
+      <div class="over-info" id="over-info">
+        <div class="over-row" id="over-current"></div>
+        <div class="over-row" id="over-last"></div>
+      </div>
+
+    </div><!-- /batters-over-panel -->
+
+    <!-- Inline: add next batter -->
+    <div class="add-batter-row" id="add-batter-row" style="display:none">
+      <span class="add-batter-label" id="add-batter-label">Next Batter</span>
+      <input class="add-batter-input" id="input-next-batter"
+             type="text" placeholder="Player name"
+             autocomplete="off" autocapitalize="words">
+      <button class="btn-add-batter" id="btn-confirm-batter">+</button>
+    </div>
+
+    <!-- Inline: add next bowler -->
+    <div class="add-bowler-row" id="add-bowler-row" style="display:none">
+      <span class="add-batter-label bowler-label">Bowler</span>
+      <div class="bowler-input-line">
+        <input class="add-batter-input" id="input-next-bowler"
+               type="text" placeholder="Select or enter bowler name"
+               list="bowler-datalist"
+               autocomplete="off" autocapitalize="words">
+        <datalist id="bowler-datalist"></datalist>
+        <button class="btn-add-batter btn-add-bowler" id="btn-confirm-bowler">+</button>
+      </div>
+    </div>
+
+    <!-- Compact actions: undo + end innings -->
+    <div class="scoring-actions">
+      <button class="btn-undo" id="btn-undo" disabled>&#8617; Undo</button>
+      <button class="btn-end-innings" id="btn-end-innings">End Innings</button>
+    </div>
+
+    <!-- Ball event buttons -->
+    <div class="ball-events" id="ball-events">
+      <button class="ball-btn runs-btn"          data-event="0">0</button>
+      <button class="ball-btn runs-btn"          data-event="1">1</button>
+      <button class="ball-btn runs-btn"          data-event="2">2</button>
+      <button class="ball-btn runs-btn"          data-event="3">3</button>
+      <button class="ball-btn runs-btn boundary" data-event="4">4</button>
+      <button class="ball-btn runs-btn six"      data-event="6">6</button>
+      <button class="ball-btn extra-btn"         data-event="wide">WD</button>
+      <button class="ball-btn extra-btn"         data-event="noball">NB</button>
+      <button class="ball-btn extra-btn"         data-event="bye">Bye</button>
+      <button class="ball-btn extra-btn"         data-event="legbye">LB</button>
+      <button class="ball-btn wicket-btn"        data-event="wicket">OUT</button>
+      <button class="ball-btn swap-btn"          id="btn-swap-strike">&#8644;</button>
+    </div>
+
+    <!-- Both scorecards — always visible, side by side -->
+    <div class="scorecards-grid">
+      <div class="scorecard-card" id="scorecard-0">
+        <p class="sc-placeholder">Innings 1</p>
+      </div>
+      <div class="scorecard-card" id="scorecard-1">
+        <p class="sc-placeholder">Innings 2</p>
+      </div>
+    </div>
+
+  </div><!-- /screen-scoring -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: RESULT  (match over, full scorecard)
+  ════════════════════════════════════════════════════════ -->
+  <div id="screen-result" style="display:none">
+    <div id="result-content"></div>
+    <div class="result-actions">
+      <button class="btn-primary" id="btn-new-match">&#8592; All Matches</button>
+    </div>
+  </div>
+
+<!-- ── Settings modal ──────────────────────────────────── -->
+  <div class="modal-overlay" id="settings-modal" style="display:none">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2>GitHub Settings</h2>
+        <button class="modal-close" id="btn-close-settings">&#10005;</button>
+      </div>
+      <form class="settings-form" id="form-settings" novalidate>
+        <label>GitHub Personal Access Token
+          <input type="password" id="input-pat" placeholder="ghp_…" autocomplete="off">
+        </label>
+        <label>GitHub Username / Org
+          <input type="text" id="input-owner" placeholder="your-username" autocomplete="off">
+        </label>
+        <label>Repository Name
+          <input type="text" id="input-repo" placeholder="cricket-data" autocomplete="off">
+        </label>
+        <label>File Path
+          <input type="text" id="input-filepath" placeholder="matches.json">
+        </label>
+        <div id="settings-status" class="status-msg"></div>
+        <button type="submit" class="btn-primary">Test &amp; Save</button>
+
+        <div class="settings-divider"></div>
+        <p class="settings-section-title">Change Password</p>
+        <label>Current Password
+          <input type="password" id="input-curr-pwd" autocomplete="current-password">
+        </label>
+        <label>New Password
+          <input type="password" id="input-new-pwd" autocomplete="new-password">
+        </label>
+        <div id="pwd-status" class="status-msg"></div>
+        <button type="button" class="btn-primary btn-secondary" id="btn-change-pwd">Update Password</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── Loading overlay ─────────────────────────────────── -->
+  <div id="loading-overlay" style="display:none">
+    <div class="spinner"></div>
+    <span>Loading…</span>
+  </div>
+
+  <!-- ── Toast ────────────────────────────────────────────── -->
+  <div id="toast" style="display:none"></div>
+
+  <script src="scoring.js"></script>
+  <script src="github.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>

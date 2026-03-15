@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Icons</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 32px; background: #f0f4f0; }
+    h2   { color: #1a7a3c; }
+    .row { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-top: 24px; }
+    .icon-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    canvas { border-radius: 22%; box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+    a.dl { display: inline-block; padding: 8px 18px; background: #1a7a3c; color: #fff;
+           border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+    p { color: #555; line-height: 1.6; max-width: 560px; }
+  </style>
+</head>
+<body>
+  <h2>&#127984; Cricket Score — Icon Generator</h2>
+  <p>
+    Click each <strong>Download</strong> button, save the file with the exact name shown,
+    then place both PNG files in the same folder as <code>index.html</code>.
+    After that you can close this page.
+  </p>
+  <div class="row">
+    <div class="icon-wrap">
+      <canvas id="c192" width="192" height="192"></canvas>
+      <a class="dl" id="dl192" download="icon-192.png">Download icon-192.png</a>
+    </div>
+    <div class="icon-wrap">
+      <canvas id="c512" width="512" height="512"></canvas>
+      <a class="dl" id="dl512" download="icon-512.png">Download icon-512.png</a>
+    </div>
+  </div>
+  <script>
+    function drawBall(ctx, size) {
+      const cx = size / 2, cy = size / 2, r = size * 0.44;
+      const pad = size * 0.07;
+
+      // Background circle (green)
+      ctx.beginPath();
+      ctx.arc(cx, cy, size / 2, 0, Math.PI * 2);
+      ctx.fillStyle = '#1a7a3c';
+      ctx.fill();
+
+      // Ball
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fillStyle = '#c0392b';
+      ctx.fill();
+
+      // Shine
+      ctx.beginPath();
+      ctx.arc(cx - r * 0.28, cy - r * 0.3, r * 0.28, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,0.18)';
+      ctx.fill();
+
+      // Seam: horizontal curve top
+      ctx.beginPath();
+      ctx.moveTo(cx - r * 0.72, cy - r * 0.12);
+      ctx.bezierCurveTo(cx - r * 0.35, cy - r * 0.52, cx + r * 0.35, cy - r * 0.52, cx + r * 0.72, cy - r * 0.12);
+      ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+      ctx.lineWidth = size * 0.028;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+
+      // Seam: horizontal curve bottom
+      ctx.beginPath();
+      ctx.moveTo(cx - r * 0.72, cy + r * 0.12);
+      ctx.bezierCurveTo(cx - r * 0.35, cy + r * 0.52, cx + r * 0.35, cy + r * 0.52, cx + r * 0.72, cy + r * 0.12);
+      ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+      ctx.lineWidth = size * 0.028;
+      ctx.stroke();
+
+      // Seam stitches top
+      const stitchW = size * 0.016, stitchH = size * 0.05;
+      const stitchPositions = [-0.48, -0.22, 0, 0.22, 0.48];
+      ctx.strokeStyle = 'rgba(255,255,255,0.7)';
+      ctx.lineWidth = size * 0.018;
+      stitchPositions.forEach(xOff => {
+        const sx = cx + xOff * r;
+        const sy = cy - r * 0.28;
+        ctx.beginPath();
+        ctx.moveTo(sx, sy - stitchH * 0.45);
+        ctx.lineTo(sx, sy + stitchH * 0.45);
+        ctx.stroke();
+      });
+      stitchPositions.forEach(xOff => {
+        const sx = cx + xOff * r;
+        const sy = cy + r * 0.28;
+        ctx.beginPath();
+        ctx.moveTo(sx, sy - stitchH * 0.45);
+        ctx.lineTo(sx, sy + stitchH * 0.45);
+        ctx.stroke();
+      });
+    }
+
+    ['192', '512'].forEach(sz => {
+      const n = parseInt(sz);
+      const canvas = document.getElementById('c' + sz);
+      const ctx = canvas.getContext('2d');
+      drawBall(ctx, n);
+      document.getElementById('dl' + sz).href = canvas.toDataURL('image/png');
+    });
+  </script>
+</body>
+</html>

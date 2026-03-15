@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "matches": [
+    {
+      "id": "2026-03-15T23:12:57.852Z",
+      "date": "2026-03-15",
+      "status": "completed",
+      "teams": [
+        "Team A",
+        "Team B"
+      ],
+      "maxOvers": 1,
+      "innings": [
+        {
+          "battingTeam": "Team A",
+          "bowlingTeam": "Team B",
+          "batters": [
+            {
+              "name": "11",
+              "runs": 10,
+              "balls": 4,
+              "fours": 0,
+              "sixes": 1,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "22",
+              "runs": 3,
+              "balls": 2,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 1,
+            "noBalls": 1,
+            "byes": 2,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 17,
+          "legalBalls": 6,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "3",
+              "r": 3
+            },
+            {
+              "d": "3",
+              "r": 3
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "Nb",
+              "r": 1
+            },
+            {
+              "d": "1",
+              "r": 1
+            },
+            {
+              "d": "Wd",
+              "r": 1
+            },
+            {
+              "d": "B",
+              "r": 1
+            },
+            {
+              "d": "B",
+              "r": 1
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "33",
+              "balls": 6,
+              "runs": 15,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 0,
+          "needNextBowler": true
+        },
+        {
+          "battingTeam": "Team B",
+          "bowlingTeam": "Team A",
+          "batters": [
+            {
+              "name": "gg",
+              "runs": 8,
+              "balls": 4,
+              "fours": 0,
+              "sixes": 1,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "hh",
+              "runs": 1,
+              "balls": 2,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 3,
+            "byes": 2,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 14,
+          "legalBalls": 6,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "1",
+              "r": 1
+            },
+            {
+              "d": "1",
+              "r": 1
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "1",
+              "r": 1
+            },
+            {
+              "d": "Nb",
+              "r": 1
+            },
+            {
+              "d": "Nb",
+              "r": 1
+            },
+            {
+              "d": "Nb",
+              "r": 1
+            },
+            {
+              "d": "B",
+              "r": 1
+            },
+            {
+              "d": "B",
+              "r": 1
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "nn",
+              "balls": 6,
+              "runs": 12,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 0,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Team A won by 3 runs",
+      "name": "Match 1 — 15 Mar 2026"
+    }
+  ]
+}

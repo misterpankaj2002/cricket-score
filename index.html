@@ -202,24 +202,46 @@
   <div class="modal-overlay" id="settings-modal" style="display:none">
     <div class="modal-box">
       <div class="modal-header">
-        <h2>GitHub Settings</h2>
+        <h2>Settings</h2>
         <button class="modal-close" id="btn-close-settings">&#10005;</button>
       </div>
       <form class="settings-form" id="form-settings" novalidate>
-        <label>GitHub Personal Access Token
-          <input type="password" id="input-pat" placeholder="ghp_…" autocomplete="off">
-        </label>
-        <label>GitHub Username / Org
-          <input type="text" id="input-owner" placeholder="your-username" autocomplete="off">
-        </label>
-        <label>Repository Name
-          <input type="text" id="input-repo" placeholder="cricket-data" autocomplete="off">
-        </label>
-        <label>File Path
-          <input type="text" id="input-filepath" placeholder="matches.json">
-        </label>
-        <div id="settings-status" class="status-msg"></div>
-        <button type="submit" class="btn-primary">Test &amp; Save</button>
+
+        <!-- Mode: proxy connected (env vars set in Netlify) -->
+        <div id="github-proxy-ok-msg" style="display:none">
+          <div class="proxy-badge proxy-badge-ok">&#10003;&ensp;GitHub connected via Netlify server</div>
+          <p class="proxy-info">Data is stored centrally. All devices connect automatically — no configuration needed here.</p>
+        </div>
+
+        <!-- Mode: proxy exists but env vars not yet set -->
+        <div id="github-proxy-setup-msg" style="display:none">
+          <div class="proxy-badge proxy-badge-warn">&#9888;&ensp;GitHub storage not yet configured</div>
+          <p class="proxy-info">Add these in <strong>Netlify → Site configuration → Environment variables</strong>, then redeploy:</p>
+          <div class="env-var-list">
+            <div class="env-var-item"><code>GITHUB_PAT</code><span>Personal access token (repo scope)</span></div>
+            <div class="env-var-item"><code>GITHUB_OWNER</code><span>Your GitHub username</span></div>
+            <div class="env-var-item"><code>GITHUB_REPO</code><span>Repository name (e.g. cricket-score)</span></div>
+            <div class="env-var-item"><code>GITHUB_FILEPATH</code><span>File path (e.g. matches.json)</span></div>
+          </div>
+        </div>
+
+        <!-- Mode: direct (local / no Netlify function) -->
+        <div id="github-direct-form" style="display:none">
+          <label>GitHub Personal Access Token
+            <input type="password" id="input-pat" placeholder="ghp_…" autocomplete="off">
+          </label>
+          <label>GitHub Username / Org
+            <input type="text" id="input-owner" placeholder="your-username" autocomplete="off">
+          </label>
+          <label>Repository Name
+            <input type="text" id="input-repo" placeholder="cricket-data" autocomplete="off">
+          </label>
+          <label>File Path
+            <input type="text" id="input-filepath" placeholder="matches.json">
+          </label>
+          <div id="settings-status" class="status-msg"></div>
+          <button type="submit" class="btn-primary">Test &amp; Save</button>
+        </div>
 
         <div class="settings-divider"></div>
         <p class="settings-section-title">Change Password</p>

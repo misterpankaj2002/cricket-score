@@ -2,7 +2,7 @@
 /* global createMatch, createInnings, addBatter, addBall, addBowler,
           needsBatter, needsBowler, canScore, isAllOut, isOversComplete,
           isTargetChased, completeInnings, swapStrikeManual, getOversString,
-          trimToTen, computeResult, loadConfig, saveConfig,
+          trimToTen, computeResult, loadConfig, saveConfig, detectMode,
           fetchMatches, pushMatches, fetchUsers, pushUsers */
 
 // ── State ───────────────────────────────────────────────────────────────────
@@ -11,6 +11,7 @@ const state = {
   matches:     [],
   sha:         null,
   usersSha:    null,   // SHA for users.json
+  mode:        null,   // 'proxy-ok' | 'proxy-unconfigured' | 'direct'
   activeMatch: null,
   undoStack:   [],
   currentUser: null,
@@ -106,7 +107,7 @@ function saveActiveMatchLocally() {
 // ── Background draft save (debounced) ────────────────────────────────────────
 let _draftTimer = null;
 function scheduleDraftSave() {
-  if (!state.config) return;
+  if (state.mode !== 'proxy-ok' && !state.config) return;
   if (_draftTimer) clearTimeout(_draftTimer);
   _draftTimer = setTimeout(async () => {
     if (!state.config) return;
@@ -159,18 +160,29 @@ document.getElementById('settings-modal').addEventListener('click', e => {
 });
 
 function openSettings() {
-  const c = loadConfig();
-  if (c) {
-    document.getElementById('input-pat').value      = c.pat      || '';
-    document.getElementById('input-owner').value    = c.owner    || '';
-    document.getElementById('input-repo').value     = c.repo     || '';
-    document.getElementById('input-filepath').value = c.filepath || 'matches.json';
-  }
-  // Show user management section only for admin
   const isAdmin = state.currentUser && state.currentUser.role === 'admin';
   document.getElementById('user-mgmt-section').style.display = isAdmin ? 'block' : 'none';
   if (isAdmin) renderUsersList();
   document.getElementById('settings-modal').style.display = 'flex';
+
+  // Show the right GitHub section based on detected mode
+  const show = (id) => ['github-proxy-ok-msg','github-proxy-setup-msg','github-direct-form']
+    .forEach(x => { document.getElementById(x).style.display = x === id ? 'block' : 'none'; });
+
+  if (state.mode === 'proxy-ok') {
+    show('github-proxy-ok-msg');
+  } else if (state.mode === 'proxy-unconfigured') {
+    show('github-proxy-setup-msg');
+  } else {
+    show('github-direct-form');
+    const c = loadConfig();
+    if (c) {
+      document.getElementById('input-pat').value      = c.pat      || '';
+      document.getElementById('input-owner').value    = c.owner    || '';
+      document.getElementById('input-repo').value     = c.repo     || '';
+      document.getElementById('input-filepath').value = c.filepath || 'matches.json';
+    }
+  }
 }
 function closeSettings() {
   document.getElementById('settings-modal').style.display = 'none';
@@ -178,6 +190,8 @@ function closeSettings() {
 
 document.getElementById('form-settings').addEventListener('submit', async e => {
   e.preventDefault();
+  // Only the direct-mode form submits; proxy mode has no submit button visible
+  if (state.mode === 'proxy-ok' || state.mode === 'proxy-unconfigured') return;
   const config = {
     pat:      document.getElementById('input-pat').value.trim(),
     owner:    document.getElementById('input-owner').value.trim(),
@@ -738,7 +752,7 @@ async function handleMatchEnd() {
 
 // ── GitHub save ─────────────────────────────────────────────────────────────
 async function pushToGitHub(match) {
-  if (!state.config) { toast('No GitHub config — match not saved remotely.', 'warn'); return; }
+  if (state.mode !== 'proxy-ok' && !state.config) { toast('No GitHub config — match not saved remotely.', 'warn'); return; }
   showLoading();
   const idx = state.matches.findIndex(m => m.id === match.id);
   if (idx >= 0) state.matches[idx] = match; else state.matches.push(match);
@@ -763,7 +777,7 @@ async function pushToGitHub(match) {
 }
 
 async function syncUsersToGitHub() {
-  if (!state.config) return;
+  if (state.mode !== 'proxy-ok' && !state.config) return;
   try {
     state.usersSha = await pushUsers(state.config, getUsers(), state.usersSha);
   } catch (err) {
@@ -786,10 +800,10 @@ async function startApp() {
     if (raw) state.activeMatch = JSON.parse(raw);
   } catch (_) { state.activeMatch = null; }
 
-  // Load GitHub data
+  // Load GitHub data (proxy mode works even without a local config)
   const config = loadConfig();
-  if (config) {
-    state.config = config;
+  state.config = config;
+  if (state.mode === 'proxy-ok' || config) {
     showLoading();
     try {
       const [matchResult, userResult] = await Promise.all([
@@ -828,9 +842,12 @@ async function startApp() {
 
 // ── Init ────────────────────────────────────────────────────────────────────
 async function init() {
+  // Detect proxy vs direct mode once; cache in state for sync checks
+  state.mode = await detectMode();
+
   // Pre-sync users from GitHub so accounts created on other devices work here
   const preConfig = loadConfig();
-  if (preConfig) {
+  if (state.mode === 'proxy-ok' || preConfig) {
     showLoading();
     try {
       const result = await fetchUsers(preConfig);

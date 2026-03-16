@@ -826,6 +826,50 @@ body {
 .login-msg-error  { color: #c62828; }
 .login-msg-info   { color: #1565c0; }
 
+/* GitHub proxy status (inside settings modal) */
+.proxy-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+.proxy-badge-ok   { background: #e8f5e9; color: #2e7d32; }
+.proxy-badge-warn { background: #fff8e1; color: #7b5800; }
+.proxy-info {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+.env-var-list {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+.env-var-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+.env-var-item code {
+  font-family: monospace;
+  font-size: 0.82rem;
+  background: #e0e0e0;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.env-var-item span { color: #777; }
+
 /* Settings extras */
 .settings-divider      { border: none; border-top: 1px solid #eee; margin: 4px 0; }
 .settings-section-title { font-size: 0.8rem; font-weight: 700; color: #555; margin: 0; }

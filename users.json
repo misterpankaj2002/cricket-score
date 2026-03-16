@@ -5,6 +5,11 @@
       "username": "admin",
       "hash": "82db58ed2687a681e11e2c67c80213a6f19edbf1178e394e988fd09fb28b2662",
       "role": "admin"
+    },
+    {
+      "username": "nashua",
+      "hash": "b95dc23f6f364131c864ebc430488f4f9aca9fb54bf701935f7f49a6cfdb93b1",
+      "role": "master"
     }
   ]
 }

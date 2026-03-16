@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "users": [
+    {
+      "username": "admin",
+      "hash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+      "role": "admin"
+    },
+    {
+      "username": "nashua",
+      "hash": "b95dc23f6f364131c864ebc430488f4f9aca9fb54bf701935f7f49a6cfdb93b1",
+      "role": "user"
+    }
+  ]
+}

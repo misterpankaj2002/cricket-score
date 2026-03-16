@@ -20,6 +20,13 @@ function toBase64(str) {
   return btoa(new TextEncoder().encode(str).reduce((s, b) => s + String.fromCharCode(b), ''));
 }
 
+function fromBase64(b64) {
+  const binary = atob(b64);
+  const bytes  = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
 // ── Mode detection ────────────────────────────────────────────────────────────
 // 'proxy-ok'           : Netlify function deployed AND env vars configured
 // 'proxy-unconfigured' : Netlify function deployed but env vars missing
@@ -128,7 +135,7 @@ async function fetchMatches(config) {
   if (missing) return { matches: [], activeDraft: null, sha: null };
   let matches = [], activeDraft = null;
   try {
-    const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    const parsed = JSON.parse(fromBase64(data.content.replace(/\n/g, '')));
     if (parsed && Array.isArray(parsed.matches)) matches     = parsed.matches;
     if (parsed && parsed.activeDraft)            activeDraft = parsed.activeDraft;
   } catch { /* ignore */ }
@@ -154,7 +161,7 @@ async function fetchUsers(config) {
   if (missing) return { users: [], sha: null };
   let users = [];
   try {
-    const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    const parsed = JSON.parse(fromBase64(data.content.replace(/\n/g, '')));
     if (parsed && Array.isArray(parsed.users)) users = parsed.users;
   } catch { /* ignore */ }
   return { users, sha: data.sha };

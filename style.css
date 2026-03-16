@@ -249,13 +249,33 @@ body {
   padding: 12px 14px;
   margin-bottom: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.match-card-body {
+  flex: 1;
+  min-width: 0;
   cursor: pointer;
   touch-action: manipulation;
 }
-.match-card:active { background: #f9f9f9; }
+.match-card-body:active { opacity: 0.75; }
 .match-card-teams  { font-size: 0.95rem; font-weight: 600; }
 .match-card-scores { font-size: 0.78rem; color: #666; margin-top: 3px; }
 .match-card-result { font-size: 0.78rem; color: #1a7a3c; font-weight: 600; margin-top: 3px; }
+.btn-delete-match {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #ccc;
+  cursor: pointer;
+  touch-action: manipulation;
+  padding: 4px 6px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.btn-delete-match:active { color: #dc3545; background: #fff0f0; }
 .empty-state { text-align: center; color: #ccc; font-size: 0.9rem; padding: 24px 0; }
 
 /* ── SCORING SCREEN ────────────────────────────────── */
@@ -895,6 +915,12 @@ body {
 .user-row-you {
   font-size: 0.7rem; color: #aaa; font-style: italic;
 }
+.btn-reset-pwd {
+  background: none; border: 1px solid #1565c0; color: #1565c0;
+  border-radius: 6px; padding: 3px 10px; font-size: 0.75rem;
+  font-weight: 600; cursor: pointer; touch-action: manipulation;
+}
+.btn-reset-pwd:active { background: #e8f0fe; }
 .btn-delete-user {
   background: none; border: 1px solid #dc3545; color: #dc3545;
   border-radius: 6px; padding: 3px 10px; font-size: 0.75rem;

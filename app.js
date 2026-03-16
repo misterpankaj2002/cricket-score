@@ -290,22 +290,41 @@ function renderUsersList() {
       `<span class="user-row-name">${esc(u.username)}</span>` +
       `<span class="user-row-role">${u.role === 'admin' ? 'admin' : 'user'}</span>` +
       (u.username !== state.currentUser.username
-        ? `<button class="btn-delete-user" data-username="${esc(u.username)}">Remove</button>`
+        ? `<button class="btn-reset-pwd" data-username="${esc(u.username)}">Reset pwd</button>` +
+          `<button class="btn-delete-user" data-username="${esc(u.username)}">Remove</button>`
         : `<span class="user-row-you">you</span>`) +
     `</div>`
   ).join('');
 }
 
-document.getElementById('users-list').addEventListener('click', e => {
-  const btn = e.target.closest('.btn-delete-user');
-  if (!btn) return;
-  const username = btn.dataset.username;
-  if (!confirm(`Remove user "${username}"?`)) return;
-  const users = getUsers().filter(u => u.username !== username);
-  saveUsers(users);
-  renderUsersList();
-  setAdduserStatus(`User "${username}" removed.`, 'ok');
-  syncUsersToGitHub();
+document.getElementById('users-list').addEventListener('click', async e => {
+  const resetBtn  = e.target.closest('.btn-reset-pwd');
+  const deleteBtn = e.target.closest('.btn-delete-user');
+
+  if (resetBtn) {
+    const username = resetBtn.dataset.username;
+    const newPwd   = prompt(`New password for "${username}" (min 4 characters):`);
+    if (!newPwd) return;
+    if (newPwd.length < 4) { setAdduserStatus('Password must be at least 4 characters.', 'error'); return; }
+    const users = getUsers();
+    const idx   = users.findIndex(u => u.username === username);
+    if (idx < 0) return;
+    users[idx].hash = await hashPwd(newPwd);
+    saveUsers(users);
+    setAdduserStatus(`Password reset for "${username}".`, 'ok');
+    syncUsersToGitHub();
+    return;
+  }
+
+  if (deleteBtn) {
+    const username = deleteBtn.dataset.username;
+    if (!confirm(`Remove user "${username}"?`)) return;
+    const users = getUsers().filter(u => u.username !== username);
+    saveUsers(users);
+    renderUsersList();
+    setAdduserStatus(`User "${username}" removed.`, 'ok');
+    syncUsersToGitHub();
+  }
 });
 
 document.getElementById('btn-add-user').addEventListener('click', async () => {
@@ -338,7 +357,8 @@ function setAdduserStatus(msg, type) {
 function renderPastMatches() {
   populateMatchName();
   const container = document.getElementById('past-matches-list');
-  const list = state.matches.slice().reverse();
+  const list    = state.matches.slice().reverse();
+  const isAdmin = state.currentUser && state.currentUser.role === 'admin';
   if (!list.length) {
     container.innerHTML = '<div class="empty-state">No matches yet.</div>';
     return;
@@ -347,18 +367,41 @@ function renderPastMatches() {
   list.forEach(m => {
     const card = document.createElement('div');
     card.className = 'match-card';
-    const title = m.name || (m.teams[0] + ' vs ' + m.teams[1]);
+    const title  = m.name || (m.teams[0] + ' vs ' + m.teams[1]);
     const scores = m.innings
       .filter(inn => inn.batters.length > 0 || inn.totalRuns > 0)
       .map(inn => `${esc(inn.battingTeam)}: ${inn.totalRuns}/${inn.wickets} (${getOversString(inn.legalBalls)})`)
       .join(' &middot; ');
     card.innerHTML =
-      `<div class="match-card-teams">${esc(title)}</div>` +
-      `<div class="match-card-scores">${esc(m.date)}${scores ? ' &middot; ' + scores : ''}</div>` +
-      (m.result ? `<div class="match-card-result">${esc(m.result)}</div>` : '');
-    card.addEventListener('click', () => showResult(m));
+      `<div class="match-card-body">` +
+        `<div class="match-card-teams">${esc(title)}</div>` +
+        `<div class="match-card-scores">${esc(m.date)}${scores ? ' &middot; ' + scores : ''}</div>` +
+        (m.result ? `<div class="match-card-result">${esc(m.result)}</div>` : '') +
+      `</div>` +
+      (isAdmin ? `<button class="btn-delete-match" title="Delete match">&#128465;</button>` : '');
+    card.querySelector('.match-card-body').addEventListener('click', () => showResult(m));
+    if (isAdmin) {
+      card.querySelector('.btn-delete-match').addEventListener('click', e => {
+        e.stopPropagation();
+        deleteMatch(m.id);
+      });
+    }
     container.appendChild(card);
   });
+}
+
+async function deleteMatch(id) {
+  if (!confirm('Delete this match? This cannot be undone.')) return;
+  state.matches = state.matches.filter(m => m.id !== id);
+  showLoading();
+  try {
+    state.sha = await pushMatches(state.config, state.matches, state.sha, state.activeMatch);
+    toast('Match deleted.', 'success');
+  } catch (err) {
+    toast('Delete failed: ' + err.message, 'error');
+  }
+  hideLoading();
+  renderPastMatches();
 }
 
 // ── Overs selector — populate 1–50, default 8 ───────────────────────────────

@@ -182,7 +182,107 @@
       ],
       "currentInningsIndex": 1,
       "result": "Team A won by 3 runs",
-      "name": "Match 1 — 15 Mar 2026"
+      "name": "Match 1 â 15 Mar 2026"
+    },
+    {
+      "id": "2026-03-16T01:35:20.264Z",
+      "date": "2026-03-16",
+      "status": "completed",
+      "teams": [
+        "Team A",
+        "Team B"
+      ],
+      "maxOvers": 8,
+      "innings": [
+        {
+          "battingTeam": "Team A",
+          "bowlingTeam": "Team B",
+          "batters": [
+            {
+              "name": "1",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "11",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 0,
+          "legalBalls": 0,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [],
+          "bowlers": [],
+          "currentBowlerIndex": -1,
+          "needNextBowler": true
+        },
+        {
+          "battingTeam": "Team B",
+          "bowlingTeam": "Team A",
+          "batters": [
+            {
+              "name": "1",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "2",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 0,
+          "legalBalls": 0,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [],
+          "bowlers": [],
+          "currentBowlerIndex": -1,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Match tied",
+      "name": "Match 2 — 15 Mar 2026"
     }
-  ]
+  ],
+  "activeDraft": null
 }

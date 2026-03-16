@@ -10,6 +10,11 @@
       "username": "nashua",
       "hash": "b95dc23f6f364131c864ebc430488f4f9aca9fb54bf701935f7f49a6cfdb93b1",
       "role": "master"
+    },
+    {
+      "username": "read",
+      "hash": "3316348dbadfb7b11c7c2ea235949419e23f9fa898ad2c198f999617912a9925",
+      "role": "readonly"
     }
   ]
 }

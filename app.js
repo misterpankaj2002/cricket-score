@@ -1,4 +1,9 @@
 // app.js
+/* global createMatch, createInnings, addBatter, addBall, addBowler,
+          needsBatter, needsBowler, canScore, isAllOut, isOversComplete,
+          isTargetChased, completeInnings, swapStrikeManual, getOversString,
+          trimToTen, computeResult, loadConfig, saveConfig,
+          fetchMatches, pushMatches */
 
 // ── State ───────────────────────────────────────────────────────────────────
 const state = {
@@ -65,6 +70,8 @@ function updateHeaderUser() {
     el.textContent = state.currentUser.username;
     el.style.display = 'inline';
     document.getElementById('btn-logout').style.display = '';
+    document.getElementById('btn-open-settings').style.display =
+      state.currentUser.role === 'admin' ? '' : 'none';
   } else {
     el.textContent = '';
     el.style.display = 'none';
@@ -92,6 +99,22 @@ function toast(msg, type) {
 
 function saveActiveMatchLocally() {
   if (state.activeMatch) localStorage.setItem('cricket_active_match', JSON.stringify(state.activeMatch));
+  scheduleDraftSave();
+}
+
+// ── Background draft save (debounced) ────────────────────────────────────────
+let _draftTimer = null;
+function scheduleDraftSave() {
+  if (!state.config) return;
+  if (_draftTimer) clearTimeout(_draftTimer);
+  _draftTimer = setTimeout(async () => {
+    if (!state.config) return;
+    try {
+      state.sha = await pushMatches(
+        state.config, state.matches, state.sha, getUsers(), state.activeMatch || null
+      );
+    } catch (_) { /* silent — UI is not blocked */ }
+  }, 5000); // 5 s after last ball
 }
 
 // ── Undo stack ───────────────────────────────────────────────────────────────
@@ -142,6 +165,10 @@ function openSettings() {
     document.getElementById('input-repo').value     = c.repo     || '';
     document.getElementById('input-filepath').value = c.filepath || 'matches.json';
   }
+  // Show user management section only for admin
+  const isAdmin = state.currentUser && state.currentUser.role === 'admin';
+  document.getElementById('user-mgmt-section').style.display = isAdmin ? 'block' : 'none';
+  if (isAdmin) renderUsersList();
   document.getElementById('settings-modal').style.display = 'flex';
 }
 function closeSettings() {
@@ -164,7 +191,7 @@ document.getElementById('form-settings').addEventListener('submit', async e => {
     state.config  = config;
     state.matches = result.matches;
     state.sha     = result.sha;
-    if (result.sha === null) state.sha = await pushMatches(config, [], null);
+    if (result.sha === null) state.sha = await pushMatches(config, [], null, getUsers());
     setStatus('Connected!', 'ok');
     renderPastMatches();
     setTimeout(closeSettings, 1000);
@@ -223,10 +250,65 @@ document.getElementById('btn-change-pwd').addEventListener('click', async () => 
   document.getElementById('input-curr-pwd').value = '';
   document.getElementById('input-new-pwd').value  = '';
   setPwdStatus('Password updated successfully.', 'ok');
+  syncUsersToGitHub();
 });
 
 function setPwdStatus(msg, type) {
   const el = document.getElementById('pwd-status');
+  el.textContent = msg;
+  el.className   = 'status-msg show' + (type ? ' ' + type : '');
+}
+
+// ── User management (admin only) ─────────────────────────────────────────────
+function renderUsersList() {
+  const users = getUsers();
+  const el    = document.getElementById('users-list');
+  if (!users.length) { el.innerHTML = ''; return; }
+  el.innerHTML = users.map(u =>
+    `<div class="user-row">` +
+      `<span class="user-row-name">${esc(u.username)}</span>` +
+      `<span class="user-row-role">${u.role === 'admin' ? 'admin' : 'user'}</span>` +
+      (u.username !== state.currentUser.username
+        ? `<button class="btn-delete-user" data-username="${esc(u.username)}">Remove</button>`
+        : `<span class="user-row-you">you</span>`) +
+    `</div>`
+  ).join('');
+}
+
+document.getElementById('users-list').addEventListener('click', e => {
+  const btn = e.target.closest('.btn-delete-user');
+  if (!btn) return;
+  const username = btn.dataset.username;
+  if (!confirm(`Remove user "${username}"?`)) return;
+  const users = getUsers().filter(u => u.username !== username);
+  saveUsers(users);
+  renderUsersList();
+  setAdduserStatus(`User "${username}" removed.`, 'ok');
+  syncUsersToGitHub();
+});
+
+document.getElementById('btn-add-user').addEventListener('click', async () => {
+  const username = document.getElementById('input-new-username').value.trim();
+  const password = document.getElementById('input-new-user-pwd').value;
+  if (!username)           { setAdduserStatus('Enter a username.', 'error'); return; }
+  if (!password)           { setAdduserStatus('Enter a password.', 'error'); return; }
+  if (password.length < 4) { setAdduserStatus('Password must be at least 4 characters.', 'error'); return; }
+  const users = getUsers();
+  if (users.some(u => u.username.toLowerCase() === username.toLowerCase())) {
+    setAdduserStatus('Username already exists.', 'error'); return;
+  }
+  const hash = await hashPwd(password);
+  users.push({ username, hash, role: 'user' });
+  saveUsers(users);
+  document.getElementById('input-new-username').value  = '';
+  document.getElementById('input-new-user-pwd').value  = '';
+  renderUsersList();
+  setAdduserStatus(`User "${username}" created successfully.`, 'ok');
+  syncUsersToGitHub();
+});
+
+function setAdduserStatus(msg, type) {
+  const el = document.getElementById('adduser-status');
   el.textContent = msg;
   el.className   = 'status-msg show' + (type ? ' ' + type : '');
 }
@@ -639,8 +721,11 @@ async function handleMatchEnd() {
   match.status = 'completed';
   match.result = computeResult(match);
   localStorage.removeItem('cricket_active_match');
-  await pushToGitHub(match);
+  // Cancel any pending draft save and clear activeMatch before pushing
+  // so the GitHub file stores no activeDraft for this completed match
+  if (_draftTimer) { clearTimeout(_draftTimer); _draftTimer = null; }
   state.activeMatch = null;
+  await pushToGitHub(match);
   showResult(match);
 }
 
@@ -652,7 +737,7 @@ async function pushToGitHub(match) {
   if (idx >= 0) state.matches[idx] = match; else state.matches.push(match);
   state.matches = trimToTen(state.matches);
   try {
-    state.sha = await pushMatches(state.config, state.matches, state.sha);
+    state.sha = await pushMatches(state.config, state.matches, state.sha, getUsers(), state.activeMatch);
     toast('Saved to GitHub ✓', 'success');
   } catch (err) {
     if (err.message === 'CONFLICT') {
@@ -660,7 +745,7 @@ async function pushToGitHub(match) {
         const fresh = await fetchMatches(state.config);
         fresh.matches.push(match);
         const trimmed = trimToTen(fresh.matches);
-        state.sha     = await pushMatches(state.config, trimmed, fresh.sha);
+        state.sha     = await pushMatches(state.config, trimmed, fresh.sha, getUsers(), state.activeMatch);
         state.matches = trimmed;
         toast('Saved to GitHub ✓', 'success');
       } catch (e2) { toast('Save failed: ' + e2.message, 'error'); }
@@ -668,6 +753,21 @@ async function pushToGitHub(match) {
   }
   hideLoading();
   renderPastMatches();
+}
+
+async function syncUsersToGitHub() {
+  if (!state.config) return;
+  try {
+    state.sha = await pushMatches(state.config, state.matches, state.sha, getUsers(), state.activeMatch);
+  } catch (err) {
+    if (err.message === 'CONFLICT') {
+      try {
+        const fresh = await fetchMatches(state.config);
+        state.sha     = await pushMatches(state.config, fresh.matches, fresh.sha, getUsers(), state.activeMatch);
+        state.matches = fresh.matches;
+      } catch (_) { toast('User sync failed — try again.', 'error'); }
+    }
+  }
 }
 
 // ── App startup (called after successful login) ──────────────────────────────
@@ -689,6 +789,13 @@ async function startApp() {
       const result = await fetchMatches(config);
       state.matches = result.matches;
       state.sha     = result.sha;
+      // GitHub is source of truth for users — merge into localStorage
+      if (result.users && result.users.length) saveUsers(result.users);
+      // Restore in-progress draft from GitHub if no local draft exists
+      if (result.activeDraft && !state.activeMatch) {
+        state.activeMatch = result.activeDraft;
+        localStorage.setItem('cricket_active_match', JSON.stringify(state.activeMatch));
+      }
     } catch (err) { toast('Could not load matches: ' + err.message, 'error'); }
     hideLoading();
   }
@@ -711,6 +818,17 @@ async function startApp() {
 
 // ── Init ────────────────────────────────────────────────────────────────────
 async function init() {
+  // Pre-sync users from GitHub so accounts created on other devices work here
+  const preConfig = loadConfig();
+  if (preConfig) {
+    showLoading();
+    try {
+      const result = await fetchMatches(preConfig);
+      if (result.users && result.users.length) saveUsers(result.users);
+    } catch (_) { /* fall back to localStorage users */ }
+    hideLoading();
+  }
+
   if (restoreSession()) {
     await startApp();
     return;

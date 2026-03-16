@@ -830,6 +830,33 @@ body {
 .settings-divider      { border: none; border-top: 1px solid #eee; margin: 4px 0; }
 .settings-section-title { font-size: 0.8rem; font-weight: 700; color: #555; margin: 0; }
 .btn-secondary { background: #555 !important; }
+.btn-add-user  { background: #1565c0 !important; }
+
+/* User management list */
+.user-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: #f8f9fa;
+  border-radius: 7px;
+  margin-bottom: 6px;
+}
+.user-row-name { flex: 1; font-size: 0.88rem; font-weight: 600; color: #1a1a1a; }
+.user-row-role {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: #fff;
+  background: #1a7a3c; padding: 2px 7px; border-radius: 10px;
+}
+.user-row-you {
+  font-size: 0.7rem; color: #aaa; font-style: italic;
+}
+.btn-delete-user {
+  background: none; border: 1px solid #dc3545; color: #dc3545;
+  border-radius: 6px; padding: 3px 10px; font-size: 0.75rem;
+  font-weight: 600; cursor: pointer; touch-action: manipulation;
+}
+.btn-delete-user:active { background: #fff0f0; }
 
 /* ── Desktop layout ────────────────────────────────── */
 @media (min-width: 600px) {

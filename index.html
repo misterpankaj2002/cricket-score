@@ -231,6 +231,24 @@
         </label>
         <div id="pwd-status" class="status-msg"></div>
         <button type="button" class="btn-primary btn-secondary" id="btn-change-pwd">Update Password</button>
+
+        <!-- Admin only: manage users -->
+        <div id="user-mgmt-section" style="display:none">
+          <div class="settings-divider"></div>
+          <p class="settings-section-title">Manage Users</p>
+          <div id="users-list"></div>
+          <label>New Username
+            <input type="text" id="input-new-username" placeholder="username"
+                   autocomplete="off" autocapitalize="none" autocorrect="off">
+          </label>
+          <label>New Password
+            <input type="password" id="input-new-user-pwd" placeholder="password"
+                   autocomplete="new-password">
+          </label>
+          <div id="adduser-status" class="status-msg"></div>
+          <button type="button" class="btn-primary btn-add-user" id="btn-add-user">+ Add User</button>
+        </div>
+
       </form>
     </div>
   </div>

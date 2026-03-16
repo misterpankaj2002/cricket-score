@@ -38,7 +38,7 @@ async function fetchMatches(config) {
   });
 
   if (res.status === 404) {
-    return { matches: [], sha: null };
+    return { matches: [], users: [], activeDraft: null, sha: null };
   }
 
   if (!res.ok) {
@@ -52,24 +52,30 @@ async function fetchMatches(config) {
 
   const data = await res.json();
   const sha = data.sha;
-  let matches = [];
+  let matches     = [];
+  let users       = [];
+  let activeDraft = null;
   try {
     const decoded = atob(data.content.replace(/\n/g, ''));
-    const parsed = JSON.parse(decoded);
-    if (parsed && Array.isArray(parsed.matches)) {
-      matches = parsed.matches;
-    }
+    const parsed  = JSON.parse(decoded);
+    if (parsed && Array.isArray(parsed.matches)) matches     = parsed.matches;
+    if (parsed && Array.isArray(parsed.users))   users       = parsed.users;
+    if (parsed && parsed.activeDraft)            activeDraft = parsed.activeDraft;
   } catch {
     matches = [];
   }
-  return { matches, sha };
+  return { matches, users, activeDraft, sha };
 }
 
-async function pushMatches(config, matches, sha) {
+function toBase64(str) {
+  return btoa(new TextEncoder().encode(str).reduce((s, b) => s + String.fromCharCode(b), ''));
+}
+
+async function pushMatches(config, matches, sha, users, activeDraft) {
   const url = buildUrl(config);
   const today = new Date().toISOString().slice(0, 10);
-  const payload = { version: 1, matches };
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+  const payload = { version: 1, matches, users: users || [], activeDraft: activeDraft || null };
+  const content = toBase64(JSON.stringify(payload, null, 2));
 
   const body = {
     message: `Update cricket scores ${today}`,

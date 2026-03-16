@@ -894,6 +894,7 @@ body {
 .settings-divider      { border: none; border-top: 1px solid #eee; margin: 4px 0; }
 .settings-section-title { font-size: 0.8rem; font-weight: 700; color: #555; margin: 0; }
 .btn-secondary { background: #555 !important; }
+.settings-select { font-size: 16px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; color: #1a1a1a; cursor: pointer; }
 .btn-add-user  { background: #1565c0 !important; }
 
 /* User management list */
@@ -912,6 +913,9 @@ body {
   letter-spacing: 0.05em; color: #fff;
   background: #1a7a3c; padding: 2px 7px; border-radius: 10px;
 }
+.user-role-admin    { background: #1a7a3c; }
+.user-role-master   { background: #1565c0; }
+.user-role-readonly { background: #888; }
 .user-row-you {
   font-size: 0.7rem; color: #aaa; font-style: italic;
 }

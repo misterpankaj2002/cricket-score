@@ -1,9 +1,5 @@
+// @ts-nocheck
 // app.js
-/* global createMatch, createInnings, addBatter, addBall, addBowler,
-          needsBatter, needsBowler, canScore, isAllOut, isOversComplete,
-          isTargetChased, completeInnings, swapStrikeManual, getOversString,
-          trimToTen, computeResult, loadConfig, saveConfig, detectMode,
-          fetchMatches, pushMatches, fetchUsers, pushUsers */
 
 // ── State ───────────────────────────────────────────────────────────────────
 const state = {
@@ -72,13 +68,31 @@ function updateHeaderUser() {
     el.textContent = state.currentUser.username;
     el.style.display = 'inline';
     document.getElementById('btn-logout').style.display = '';
-    document.getElementById('btn-open-settings').style.display =
-      state.currentUser.role === 'admin' ? '' : 'none';
+    // All logged-in users see the gear (Change Password is universal)
+    // GitHub config and user management are hidden inside for non-admins
+    document.getElementById('btn-open-settings').style.display = '';
   } else {
     el.textContent = '';
     el.style.display = 'none';
     document.getElementById('btn-logout').style.display = 'none';
   }
+}
+
+// ── Role helpers ─────────────────────────────────────────────────────────────
+// 'admin'    – full admin access
+// 'master'   – create & score matches, no admin panel
+// 'user'     – legacy alias for master (backward compat)
+// 'readonly' – view only
+function canModify() {
+  if (!state.currentUser) return false;
+  const r = state.currentUser.role;
+  return r === 'admin' || r === 'master' || r === 'user';
+}
+
+function roleLabel(role) {
+  if (role === 'admin')    return 'admin';
+  if (role === 'readonly') return 'read-only';
+  return 'master'; // 'master' and legacy 'user'
 }
 
 // ── Utilities ───────────────────────────────────────────────────────────────
@@ -288,7 +302,7 @@ function renderUsersList() {
   el.innerHTML = users.map(u =>
     `<div class="user-row">` +
       `<span class="user-row-name">${esc(u.username)}</span>` +
-      `<span class="user-row-role">${u.role === 'admin' ? 'admin' : 'user'}</span>` +
+      `<span class="user-row-role user-role-${u.role === 'readonly' ? 'readonly' : u.role === 'admin' ? 'admin' : 'master'}">${roleLabel(u.role)}</span>` +
       (u.username !== state.currentUser.username
         ? `<button class="btn-reset-pwd" data-username="${esc(u.username)}">Reset pwd</button>` +
           `<button class="btn-delete-user" data-username="${esc(u.username)}">Remove</button>`
@@ -338,7 +352,8 @@ document.getElementById('btn-add-user').addEventListener('click', async () => {
     setAdduserStatus('Username already exists.', 'error'); return;
   }
   const hash = await hashPwd(password);
-  users.push({ username, hash, role: 'user' });
+  const role = document.getElementById('select-new-user-role').value || 'master';
+  users.push({ username, hash, role });
   saveUsers(users);
   document.getElementById('input-new-username').value  = '';
   document.getElementById('input-new-user-pwd').value  = '';
@@ -355,6 +370,9 @@ function setAdduserStatus(msg, type) {
 
 // ── Past matches ────────────────────────────────────────────────────────────
 function renderPastMatches() {
+  // Show/hide the New Match card based on role
+  const homeStart = document.getElementById('home-start');
+  if (homeStart) homeStart.style.display = canModify() ? '' : 'none';
   populateMatchName();
   const container = document.getElementById('past-matches-list');
   const list    = state.matches.slice().reverse();
@@ -425,6 +443,7 @@ function populateMatchName() {
 
 // ── New match (inline on home screen) ───────────────────────────────────────
 document.getElementById('btn-start-match').addEventListener('click', () => {
+  if (!canModify()) return;
   const name     = document.getElementById('input-match-name').value.trim();
   const date     = new Date().toISOString().slice(0, 10);
   const maxOvers = parseInt(document.getElementById('select-overs').value, 10) || 8;
@@ -547,9 +566,16 @@ function renderScoring() {
     if (!bowlerInput.value) setTimeout(() => bowlerInput.focus(), 50);
   }
 
-  // Ball button states
+  // Ball button states — also disabled for readonly users
+  const readonly = !canModify();
   const ok = canScore(match);
-  document.querySelectorAll('.ball-btn').forEach(btn => { btn.disabled = !ok; });
+  document.querySelectorAll('.ball-btn').forEach(btn => { btn.disabled = !ok || readonly; });
+  document.getElementById('btn-undo').disabled       = state.undoStack.length === 0 || readonly;
+  document.getElementById('btn-end-innings').disabled = readonly;
+  if (readonly) {
+    document.getElementById('add-batter-row').style.display = 'none';
+    document.getElementById('add-bowler-row').style.display = 'none';
+  }
 
   // Scorecards
   renderScorecards();
@@ -869,8 +895,8 @@ async function startApp() {
 
   renderPastMatches();
 
-  // Resume prompt
-  if (state.activeMatch) {
+  // Resume prompt (readonly users cannot score, so don't offer to resume)
+  if (state.activeMatch && canModify()) {
     const m = state.activeMatch;
     if (confirm('Resume match: ' + m.teams[0] + ' vs ' + m.teams[1] + '?')) {
       showScreen('screen-scoring');

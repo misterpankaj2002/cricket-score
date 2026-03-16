@@ -55,7 +55,7 @@
   ════════════════════════════════════════════════════════ -->
   <div id="screen-home" style="display:none">
 
-    <div class="home-start">
+    <div class="home-start" id="home-start">
       <div class="setup-card">
         <div class="setup-header">
           <span class="setup-icon">&#127984;</span>
@@ -263,9 +263,15 @@
             <input type="text" id="input-new-username" placeholder="username"
                    autocomplete="off" autocapitalize="none" autocorrect="off">
           </label>
-          <label>New Password
+          <label>Password
             <input type="password" id="input-new-user-pwd" placeholder="password"
                    autocomplete="new-password">
+          </label>
+          <label>Role
+            <select id="select-new-user-role" class="settings-select">
+              <option value="master">Master — full scoring access</option>
+              <option value="readonly">Read-Only — view matches only</option>
+            </select>
           </label>
           <div id="adduser-status" class="status-msg"></div>
           <button type="button" class="btn-primary btn-add-user" id="btn-add-user">+ Add User</button>

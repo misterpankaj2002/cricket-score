@@ -25,85 +25,101 @@ function githubHeaders(pat) {
   };
 }
 
+// Build URL for matches file (e.g. matches.json)
 function buildUrl(config) {
   const { owner, repo, filepath } = config;
   return `https://api.github.com/repos/${owner}/${repo}/contents/${filepath}`;
 }
 
-async function fetchMatches(config) {
-  const url = buildUrl(config);
-  const res = await fetch(url, {
-    method: 'GET',
-    headers: githubHeaders(config.pat),
-  });
-
-  if (res.status === 404) {
-    return { matches: [], users: [], activeDraft: null, sha: null };
-  }
-
-  if (!res.ok) {
-    let msg = `GitHub error ${res.status}`;
-    try {
-      const body = await res.json();
-      if (body && body.message) msg = body.message;
-    } catch { /* ignore */ }
-    throw new Error(msg);
-  }
-
-  const data = await res.json();
-  const sha = data.sha;
-  let matches     = [];
-  let users       = [];
-  let activeDraft = null;
-  try {
-    const decoded = atob(data.content.replace(/\n/g, ''));
-    const parsed  = JSON.parse(decoded);
-    if (parsed && Array.isArray(parsed.matches)) matches     = parsed.matches;
-    if (parsed && Array.isArray(parsed.users))   users       = parsed.users;
-    if (parsed && parsed.activeDraft)            activeDraft = parsed.activeDraft;
-  } catch {
-    matches = [];
-  }
-  return { matches, users, activeDraft, sha };
+// Build URL for users file — same folder, always users.json
+function buildUsersUrl(config) {
+  const { owner, repo, filepath } = config;
+  const dir = filepath.lastIndexOf('/') >= 0
+    ? filepath.substring(0, filepath.lastIndexOf('/') + 1)
+    : '';
+  return `https://api.github.com/repos/${owner}/${repo}/contents/${dir}users.json`;
 }
 
 function toBase64(str) {
   return btoa(new TextEncoder().encode(str).reduce((s, b) => s + String.fromCharCode(b), ''));
 }
 
-async function pushMatches(config, matches, sha, users, activeDraft) {
-  const url = buildUrl(config);
-  const today = new Date().toISOString().slice(0, 10);
-  const payload = { version: 1, matches, users: users || [], activeDraft: activeDraft || null };
-  const content = toBase64(JSON.stringify(payload, null, 2));
-
-  const body = {
-    message: `Update cricket scores ${today}`,
-    content,
-  };
-  if (sha !== null) {
-    body.sha = sha;
-  }
-
-  const res = await fetch(url, {
-    method: 'PUT',
-    headers: githubHeaders(config.pat),
-    body: JSON.stringify(body),
-  });
-
-  if (res.status === 409) {
-    throw new Error('CONFLICT');
-  }
-
+async function githubGet(url, pat) {
+  const res = await fetch(url, { method: 'GET', headers: githubHeaders(pat) });
+  if (res.status === 404) return { missing: true };
   if (!res.ok) {
     let msg = `GitHub error ${res.status}`;
-    try {
-      const errBody = await res.json();
-      if (errBody && errBody.message) msg = errBody.message;
-    } catch { /* ignore */ }
+    try { const b = await res.json(); if (b && b.message) msg = b.message; } catch { /* ignore */ }
     throw new Error(msg);
   }
+  return { missing: false, data: await res.json() };
+}
 
+async function githubPut(url, pat, message, content, sha) {
+  const body = { message, content };
+  if (sha) body.sha = sha;
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: githubHeaders(pat),
+    body: JSON.stringify(body),
+  });
+  if (res.status === 409) throw new Error('CONFLICT');
+  if (!res.ok) {
+    let msg = `GitHub error ${res.status}`;
+    try { const b = await res.json(); if (b && b.message) msg = b.message; } catch { /* ignore */ }
+    throw new Error(msg);
+  }
   const data = await res.json();
   return data.content.sha;
+}
+
+// ── Matches ──────────────────────────────────────────────────────────────────
+
+async function fetchMatches(config) {
+  const { missing, data } = await githubGet(buildUrl(config), config.pat);
+  if (missing) return { matches: [], activeDraft: null, sha: null };
+
+  let matches = [], activeDraft = null;
+  try {
+    const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    if (parsed && Array.isArray(parsed.matches)) matches     = parsed.matches;
+    if (parsed && parsed.activeDraft)            activeDraft = parsed.activeDraft;
+  } catch { /* ignore */ }
+  return { matches, activeDraft, sha: data.sha };
+}
+
+async function pushMatches(config, matches, sha, activeDraft) {
+  const payload = { version: 1, matches, activeDraft: activeDraft || null };
+  const today   = new Date().toISOString().slice(0, 10);
+  return githubPut(
+    buildUrl(config), config.pat,
+    `Update cricket scores ${today}`,
+    toBase64(JSON.stringify(payload, null, 2)),
+    sha
+  );
+}
+
+// ── Users ────────────────────────────────────────────────────────────────────
+
+async function fetchUsers(config) {
+  const { missing, data } = await githubGet(buildUsersUrl(config), config.pat);
+  if (missing) return { users: [], sha: null };
+
+  let users = [];
+  try {
+    const parsed = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    if (parsed && Array.isArray(parsed.users)) users = parsed.users;
+  } catch { /* ignore */ }
+  return { users, sha: data.sha };
+}
+
+async function pushUsers(config, users, sha) {
+  const payload = { version: 1, users };
+  const today   = new Date().toISOString().slice(0, 10);
+  return githubPut(
+    buildUsersUrl(config), config.pat,
+    `Update cricket users ${today}`,
+    toBase64(JSON.stringify(payload, null, 2)),
+    sha
+  );
 }

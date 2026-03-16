@@ -3,13 +3,14 @@
           needsBatter, needsBowler, canScore, isAllOut, isOversComplete,
           isTargetChased, completeInnings, swapStrikeManual, getOversString,
           trimToTen, computeResult, loadConfig, saveConfig,
-          fetchMatches, pushMatches */
+          fetchMatches, pushMatches, fetchUsers, pushUsers */
 
 // ── State ───────────────────────────────────────────────────────────────────
 const state = {
   config:      null,
   matches:     [],
   sha:         null,
+  usersSha:    null,   // SHA for users.json
   activeMatch: null,
   undoStack:   [],
   currentUser: null,
@@ -111,7 +112,7 @@ function scheduleDraftSave() {
     if (!state.config) return;
     try {
       state.sha = await pushMatches(
-        state.config, state.matches, state.sha, getUsers(), state.activeMatch || null
+        state.config, state.matches, state.sha, state.activeMatch || null
       );
     } catch (_) { /* silent — UI is not blocked */ }
   }, 5000); // 5 s after last ball
@@ -186,12 +187,18 @@ document.getElementById('form-settings').addEventListener('submit', async e => {
   if (!config.pat || !config.owner || !config.repo) { setStatus('Please fill in all fields.', 'error'); return; }
   setStatus('Testing connection…', '');
   try {
-    const result = await fetchMatches(config);
+    const [matchResult, userResult] = await Promise.all([
+      fetchMatches(config),
+      fetchUsers(config),
+    ]);
     saveConfig(config);
-    state.config  = config;
-    state.matches = result.matches;
-    state.sha     = result.sha;
-    if (result.sha === null) state.sha = await pushMatches(config, [], null, getUsers());
+    state.config   = config;
+    state.matches  = matchResult.matches;
+    state.sha      = matchResult.sha;
+    state.usersSha = userResult.sha;
+    if (userResult.users && userResult.users.length) saveUsers(userResult.users);
+    if (matchResult.sha === null) state.sha      = await pushMatches(config, [], null, null);
+    if (userResult.sha  === null) state.usersSha = await pushUsers(config, getUsers(), null);
     setStatus('Connected!', 'ok');
     renderPastMatches();
     setTimeout(closeSettings, 1000);
@@ -737,7 +744,7 @@ async function pushToGitHub(match) {
   if (idx >= 0) state.matches[idx] = match; else state.matches.push(match);
   state.matches = trimToTen(state.matches);
   try {
-    state.sha = await pushMatches(state.config, state.matches, state.sha, getUsers(), state.activeMatch);
+    state.sha = await pushMatches(state.config, state.matches, state.sha, state.activeMatch);
     toast('Saved to GitHub ✓', 'success');
   } catch (err) {
     if (err.message === 'CONFLICT') {
@@ -745,7 +752,7 @@ async function pushToGitHub(match) {
         const fresh = await fetchMatches(state.config);
         fresh.matches.push(match);
         const trimmed = trimToTen(fresh.matches);
-        state.sha     = await pushMatches(state.config, trimmed, fresh.sha, getUsers(), state.activeMatch);
+        state.sha     = await pushMatches(state.config, trimmed, fresh.sha, state.activeMatch);
         state.matches = trimmed;
         toast('Saved to GitHub ✓', 'success');
       } catch (e2) { toast('Save failed: ' + e2.message, 'error'); }
@@ -758,13 +765,12 @@ async function pushToGitHub(match) {
 async function syncUsersToGitHub() {
   if (!state.config) return;
   try {
-    state.sha = await pushMatches(state.config, state.matches, state.sha, getUsers(), state.activeMatch);
+    state.usersSha = await pushUsers(state.config, getUsers(), state.usersSha);
   } catch (err) {
     if (err.message === 'CONFLICT') {
       try {
-        const fresh = await fetchMatches(state.config);
-        state.sha     = await pushMatches(state.config, fresh.matches, fresh.sha, getUsers(), state.activeMatch);
-        state.matches = fresh.matches;
+        const fresh    = await fetchUsers(state.config);
+        state.usersSha = await pushUsers(state.config, getUsers(), fresh.sha);
       } catch (_) { toast('User sync failed — try again.', 'error'); }
     }
   }
@@ -786,14 +792,18 @@ async function startApp() {
     state.config = config;
     showLoading();
     try {
-      const result = await fetchMatches(config);
-      state.matches = result.matches;
-      state.sha     = result.sha;
+      const [matchResult, userResult] = await Promise.all([
+        fetchMatches(config),
+        fetchUsers(config),
+      ]);
+      state.matches  = matchResult.matches;
+      state.sha      = matchResult.sha;
+      state.usersSha = userResult.sha;
       // GitHub is source of truth for users — merge into localStorage
-      if (result.users && result.users.length) saveUsers(result.users);
+      if (userResult.users && userResult.users.length) saveUsers(userResult.users);
       // Restore in-progress draft from GitHub if no local draft exists
-      if (result.activeDraft && !state.activeMatch) {
-        state.activeMatch = result.activeDraft;
+      if (matchResult.activeDraft && !state.activeMatch) {
+        state.activeMatch = matchResult.activeDraft;
         localStorage.setItem('cricket_active_match', JSON.stringify(state.activeMatch));
       }
     } catch (err) { toast('Could not load matches: ' + err.message, 'error'); }
@@ -823,8 +833,11 @@ async function init() {
   if (preConfig) {
     showLoading();
     try {
-      const result = await fetchMatches(preConfig);
-      if (result.users && result.users.length) saveUsers(result.users);
+      const result = await fetchUsers(preConfig);
+      if (result.users && result.users.length) {
+        saveUsers(result.users);
+        state.usersSha = result.sha;
+      }
     } catch (_) { /* fall back to localStorage users */ }
     hideLoading();
   }

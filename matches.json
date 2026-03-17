@@ -493,13 +493,13 @@
     "date": "2026-03-17",
     "status": "in_progress",
     "teams": [
-      "Team A7",
+      "Team a",
       "Team B"
     ],
     "maxOvers": 8,
     "innings": [
       {
-        "battingTeam": "Team A7",
+        "battingTeam": "Team a",
         "bowlingTeam": "Team B",
         "batters": [
           {
@@ -607,7 +607,7 @@
       },
       {
         "battingTeam": "Team B",
-        "bowlingTeam": "Team A7",
+        "bowlingTeam": "Team a",
         "batters": [],
         "extras": {
           "wides": 0,

@@ -68,9 +68,9 @@ function updateHeaderUser() {
     el.textContent = state.currentUser.username;
     el.style.display = 'inline';
     document.getElementById('btn-logout').style.display = '';
-    // All logged-in users see the gear (Change Password is universal)
-    // GitHub config and user management are hidden inside for non-admins
-    document.getElementById('btn-open-settings').style.display = '';
+    // Gear icon: admin only
+    const isAdmin = state.currentUser.role === 'admin';
+    document.getElementById('btn-open-settings').style.display = isAdmin ? '' : 'none';
   } else {
     el.textContent = '';
     el.style.display = 'none';

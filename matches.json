@@ -522,10 +522,10 @@
           },
           {
             "name": "4",
-            "runs": 60,
-            "balls": 10,
+            "runs": 96,
+            "balls": 16,
             "fours": 0,
-            "sixes": 10,
+            "sixes": 16,
             "howOut": null,
             "active": true
           }
@@ -537,11 +537,11 @@
           "legByes": 0
         },
         "wickets": 1,
-        "totalRuns": 136,
-        "legalBalls": 24,
-        "completed": false,
-        "strikerIndex": 2,
-        "nonStrikerIndex": 1,
+        "totalRuns": 172,
+        "legalBalls": 30,
+        "completed": true,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 2,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
@@ -594,9 +594,15 @@
             "balls": 6,
             "runs": 36,
             "wickets": 0
+          },
+          {
+            "name": "8",
+            "balls": 6,
+            "runs": 36,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 3,
+        "currentBowlerIndex": 4,
         "needNextBowler": true
       },
       {
@@ -623,7 +629,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 4 — 16 Mar 2026"
   }

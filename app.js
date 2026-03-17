@@ -179,22 +179,27 @@ function openSettings() {
   if (isAdmin) renderUsersList();
   document.getElementById('settings-modal').style.display = 'flex';
 
-  // Show the right GitHub section based on detected mode
-  const show = (id) => ['github-proxy-ok-msg','github-proxy-setup-msg','github-direct-form']
-    .forEach(x => { document.getElementById(x).style.display = x === id ? 'block' : 'none'; });
-
-  if (state.mode === 'proxy-ok') {
-    show('github-proxy-ok-msg');
-  } else if (state.mode === 'proxy-unconfigured') {
-    show('github-proxy-setup-msg');
+  // GitHub sections: admin only
+  const githubIds = ['github-proxy-ok-msg', 'github-proxy-setup-msg', 'github-direct-form'];
+  if (!isAdmin) {
+    githubIds.forEach(id => { document.getElementById(id).style.display = 'none'; });
   } else {
-    show('github-direct-form');
-    const c = loadConfig();
-    if (c) {
-      document.getElementById('input-pat').value      = c.pat      || '';
-      document.getElementById('input-owner').value    = c.owner    || '';
-      document.getElementById('input-repo').value     = c.repo     || '';
-      document.getElementById('input-filepath').value = c.filepath || 'matches.json';
+    const show = (id) => githubIds
+      .forEach(x => { document.getElementById(x).style.display = x === id ? 'block' : 'none'; });
+
+    if (state.mode === 'proxy-ok') {
+      show('github-proxy-ok-msg');
+    } else if (state.mode === 'proxy-unconfigured') {
+      show('github-proxy-setup-msg');
+    } else {
+      show('github-direct-form');
+      const c = loadConfig();
+      if (c) {
+        document.getElementById('input-pat').value      = c.pat      || '';
+        document.getElementById('input-owner').value    = c.owner    || '';
+        document.getElementById('input-repo').value     = c.repo     || '';
+        document.getElementById('input-filepath').value = c.filepath || 'matches.json';
+      }
     }
   }
 }

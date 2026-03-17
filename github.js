@@ -36,7 +36,7 @@ let _mode = null;
 async function detectMode() {
   if (_mode) return _mode;
   try {
-    const res = await fetch('/.netlify/functions/data?probe=1', { method: 'GET' });
+    const res = await fetch('/api/data?probe=1', { method: 'GET' });
     _mode = res.status === 200 ? 'proxy-ok'
           : res.status === 503 ? 'proxy-unconfigured'
           : 'direct';
@@ -48,7 +48,7 @@ async function detectMode() {
 
 // ── Proxy HTTP helpers ────────────────────────────────────────────────────────
 async function proxyGet(file) {
-  const res = await fetch(`/.netlify/functions/data?file=${file}`, { method: 'GET' });
+  const res = await fetch(`/api/data?file=${file}`, { method: 'GET' });
   if (res.status === 404) return { missing: true };
   if (!res.ok) {
     let msg = `GitHub error ${res.status}`;
@@ -61,7 +61,7 @@ async function proxyGet(file) {
 async function proxyPut(file, content, sha, message) {
   const body = { message, content };
   if (sha) body.sha = sha;
-  const res = await fetch(`/.netlify/functions/data?file=${file}`, {
+  const res = await fetch(`/api/data?file=${file}`, {
     method:  'PUT',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify(body),

@@ -611,10 +611,10 @@
         "batters": [
           {
             "name": "9",
-            "runs": 36,
-            "balls": 6,
+            "runs": 72,
+            "balls": 12,
             "fours": 0,
-            "sixes": 6,
+            "sixes": 12,
             "howOut": null,
             "active": true
           },
@@ -635,11 +635,11 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 72,
-        "legalBalls": 12,
+        "totalRuns": 108,
+        "legalBalls": 18,
         "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
@@ -680,9 +680,15 @@
             "balls": 6,
             "runs": 36,
             "wickets": 0
+          },
+          {
+            "name": "13",
+            "balls": 6,
+            "runs": 36,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 1,
+        "currentBowlerIndex": 2,
         "needNextBowler": true
       }
     ],

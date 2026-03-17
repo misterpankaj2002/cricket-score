@@ -1,5 +1,5 @@
 // sw.js — Service Worker for Cricket Score PWA
-const CACHE = 'cricket-v1';
+const CACHE = 'cricket-v2';
 const ASSETS = [
   '/',
   '/index.html',

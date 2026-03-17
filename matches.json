@@ -486,220 +486,248 @@
       "currentInningsIndex": 1,
       "result": "Team A won by 18 runs",
       "name": "Match 3 — 16 Mar 2026"
+    },
+    {
+      "id": "2026-03-17T00:39:47.832Z",
+      "date": "2026-03-17",
+      "status": "completed",
+      "teams": [
+        "Team a",
+        "Team B"
+      ],
+      "maxOvers": 8,
+      "innings": [
+        {
+          "battingTeam": "Team a",
+          "bowlingTeam": "Team B",
+          "batters": [
+            {
+              "name": "1",
+              "runs": 4,
+              "balls": 2,
+              "fours": 1,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "2",
+              "runs": 72,
+              "balls": 12,
+              "fours": 0,
+              "sixes": 12,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "4",
+              "runs": 96,
+              "balls": 16,
+              "fours": 0,
+              "sixes": 16,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 1,
+          "totalRuns": 172,
+          "legalBalls": 30,
+          "completed": true,
+          "strikerIndex": 1,
+          "nonStrikerIndex": 2,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "3",
+              "balls": 6,
+              "runs": 28,
+              "wickets": 1
+            },
+            {
+              "name": "5",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "6",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "7",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "8",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 4,
+          "needNextBowler": true
+        },
+        {
+          "battingTeam": "Team B",
+          "bowlingTeam": "Team a",
+          "batters": [
+            {
+              "name": "9",
+              "runs": 102,
+              "balls": 17,
+              "fours": 0,
+              "sixes": 17,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "10",
+              "runs": 72,
+              "balls": 12,
+              "fours": 0,
+              "sixes": 12,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 174,
+          "legalBalls": 29,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            }
+          ],
+          "lastOverBalls": [
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "11",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "12",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "13",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "14",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "15",
+              "balls": 5,
+              "runs": 30,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 4,
+          "needNextBowler": false
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Team B won by 10 wickets",
+      "name": "Match 4 — 16 Mar 2026"
     }
   ],
-  "activeDraft": {
-    "id": "2026-03-17T00:39:47.832Z",
-    "date": "2026-03-17",
-    "status": "in_progress",
-    "teams": [
-      "Team a",
-      "Team B"
-    ],
-    "maxOvers": 8,
-    "innings": [
-      {
-        "battingTeam": "Team a",
-        "bowlingTeam": "Team B",
-        "batters": [
-          {
-            "name": "1",
-            "runs": 4,
-            "balls": 2,
-            "fours": 1,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "2",
-            "runs": 72,
-            "balls": 12,
-            "fours": 0,
-            "sixes": 12,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "4",
-            "runs": 96,
-            "balls": 16,
-            "fours": 0,
-            "sixes": 16,
-            "howOut": null,
-            "active": true
-          }
-        ],
-        "extras": {
-          "wides": 0,
-          "noBalls": 0,
-          "byes": 0,
-          "legByes": 0
-        },
-        "wickets": 1,
-        "totalRuns": 172,
-        "legalBalls": 30,
-        "completed": true,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 2,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "3",
-            "balls": 6,
-            "runs": 28,
-            "wickets": 1
-          },
-          {
-            "name": "5",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "6",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "7",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "8",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          }
-        ],
-        "currentBowlerIndex": 4,
-        "needNextBowler": true
-      },
-      {
-        "battingTeam": "Team B",
-        "bowlingTeam": "Team a",
-        "batters": [
-          {
-            "name": "9",
-            "runs": 72,
-            "balls": 12,
-            "fours": 0,
-            "sixes": 12,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "10",
-            "runs": 72,
-            "balls": 12,
-            "fours": 0,
-            "sixes": 12,
-            "howOut": null,
-            "active": true
-          }
-        ],
-        "extras": {
-          "wides": 0,
-          "noBalls": 0,
-          "byes": 0,
-          "legByes": 0
-        },
-        "wickets": 0,
-        "totalRuns": 144,
-        "legalBalls": 24,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "11",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "12",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "13",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "14",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          }
-        ],
-        "currentBowlerIndex": 3,
-        "needNextBowler": true
-      }
-    ],
-    "currentInningsIndex": 1,
-    "result": null,
-    "name": "Match 4 — 16 Mar 2026"
-  }
+  "activeDraft": null
 }

@@ -433,6 +433,107 @@
       "currentInningsIndex": 1,
       "result": "nashua won by 2 runs",
       "name": "Roby park 03/17"
+    },
+    {
+      "id": "2026-03-17T11:24:41.261Z",
+      "date": "2026-03-17",
+      "status": "completed",
+      "teams": [
+        "Team A",
+        "Team B"
+      ],
+      "maxOvers": 3,
+      "innings": [
+        {
+          "battingTeam": "Team A",
+          "bowlingTeam": "Team B",
+          "batters": [
+            {
+              "name": "1",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "2",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "22",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 1,
+          "totalRuns": 0,
+          "legalBalls": 1,
+          "completed": true,
+          "strikerIndex": 2,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [
+            {
+              "d": "W",
+              "r": 0
+            }
+          ],
+          "lastOverBalls": [],
+          "bowlers": [
+            {
+              "name": "33",
+              "balls": 1,
+              "runs": 0,
+              "wickets": 1
+            }
+          ],
+          "currentBowlerIndex": 0,
+          "needNextBowler": false
+        },
+        {
+          "battingTeam": "Team B",
+          "bowlingTeam": "Team A",
+          "batters": [],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 0,
+          "legalBalls": 0,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [],
+          "bowlers": [],
+          "currentBowlerIndex": -1,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Match tied",
+      "name": "Match 3 — 17 Mar 2026"
     }
   ],
   "activeDraft": null

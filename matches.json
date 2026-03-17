@@ -513,10 +513,10 @@
           },
           {
             "name": "2",
-            "runs": 66,
-            "balls": 11,
+            "runs": 72,
+            "balls": 12,
             "fours": 0,
-            "sixes": 11,
+            "sixes": 12,
             "howOut": null,
             "active": true
           },
@@ -537,34 +537,13 @@
           "legByes": 0
         },
         "wickets": 1,
-        "totalRuns": 130,
-        "legalBalls": 23,
+        "totalRuns": 136,
+        "legalBalls": 24,
         "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 2,
+        "strikerIndex": 2,
+        "nonStrikerIndex": 1,
         "needNextBatter": false,
-        "currentOverBalls": [
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
+        "currentOverBalls": [],
         "lastOverBalls": [
           {
             "d": "6",
@@ -612,13 +591,13 @@
           },
           {
             "name": "7",
-            "balls": 5,
-            "runs": 30,
+            "balls": 6,
+            "runs": 36,
             "wickets": 0
           }
         ],
         "currentBowlerIndex": 3,
-        "needNextBowler": false
+        "needNextBowler": true
       },
       {
         "battingTeam": "Team B",

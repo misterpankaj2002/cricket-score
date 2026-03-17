@@ -504,10 +504,28 @@
         "batters": [
           {
             "name": "1",
+            "runs": 4,
+            "balls": 2,
+            "fours": 1,
+            "sixes": 0,
+            "howOut": "out",
+            "active": false
+          },
+          {
+            "name": "2",
             "runs": 0,
             "balls": 0,
             "fours": 0,
             "sixes": 0,
+            "howOut": null,
+            "active": true
+          },
+          {
+            "name": "4",
+            "runs": 24,
+            "balls": 4,
+            "fours": 0,
+            "sixes": 4,
             "howOut": null,
             "active": true
           }
@@ -518,17 +536,49 @@
           "byes": 0,
           "legByes": 0
         },
-        "wickets": 0,
-        "totalRuns": 0,
-        "legalBalls": 0,
+        "wickets": 1,
+        "totalRuns": 28,
+        "legalBalls": 6,
         "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 2,
         "needNextBatter": false,
         "currentOverBalls": [],
-        "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
+        "lastOverBalls": [
+          {
+            "d": "4",
+            "r": 4
+          },
+          {
+            "d": "W",
+            "r": 0
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          }
+        ],
+        "bowlers": [
+          {
+            "name": "3",
+            "balls": 6,
+            "runs": 28,
+            "wickets": 1
+          }
+        ],
+        "currentBowlerIndex": 0,
         "needNextBowler": true
       },
       {

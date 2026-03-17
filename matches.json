@@ -493,13 +493,13 @@
     "date": "2026-03-17",
     "status": "in_progress",
     "teams": [
-      "Team A",
+      "Team A7",
       "Team B"
     ],
     "maxOvers": 8,
     "innings": [
       {
-        "battingTeam": "Team A",
+        "battingTeam": "Team A7",
         "bowlingTeam": "Team B",
         "batters": [
           {
@@ -513,10 +513,10 @@
           },
           {
             "name": "2",
-            "runs": 36,
-            "balls": 6,
+            "runs": 66,
+            "balls": 11,
             "fours": 0,
-            "sixes": 6,
+            "sixes": 11,
             "howOut": null,
             "active": true
           },
@@ -537,13 +537,34 @@
           "legByes": 0
         },
         "wickets": 1,
-        "totalRuns": 100,
-        "legalBalls": 18,
+        "totalRuns": 130,
+        "legalBalls": 23,
         "completed": false,
         "strikerIndex": 1,
         "nonStrikerIndex": 2,
         "needNextBatter": false,
-        "currentOverBalls": [],
+        "currentOverBalls": [
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          }
+        ],
         "lastOverBalls": [
           {
             "d": "6",
@@ -588,14 +609,20 @@
             "balls": 6,
             "runs": 36,
             "wickets": 0
+          },
+          {
+            "name": "7",
+            "balls": 5,
+            "runs": 30,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 2,
-        "needNextBowler": true
+        "currentBowlerIndex": 3,
+        "needNextBowler": false
       },
       {
         "battingTeam": "Team B",
-        "bowlingTeam": "Team A",
+        "bowlingTeam": "Team A7",
         "batters": [],
         "extras": {
           "wides": 0,

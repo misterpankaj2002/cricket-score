@@ -151,8 +151,8 @@
         "batters": [
           {
             "name": "Ww",
-            "runs": 0,
-            "balls": 3,
+            "runs": 10,
+            "balls": 8,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -160,10 +160,10 @@
           },
           {
             "name": "Ee",
-            "runs": 0,
-            "balls": 3,
+            "runs": 25,
+            "balls": 8,
             "fours": 0,
-            "sixes": 0,
+            "sixes": 4,
             "howOut": null,
             "active": true
           }
@@ -175,37 +175,54 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 6,
-        "legalBalls": 6,
+        "totalRuns": 41,
+        "legalBalls": 16,
         "completed": false,
         "strikerIndex": 1,
         "nonStrikerIndex": 0,
         "needNextBatter": false,
-        "currentOverBalls": [],
+        "currentOverBalls": [
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "6",
+            "r": 6
+          }
+        ],
         "lastOverBalls": [
           {
-            "d": "B",
+            "d": "1",
             "r": 1
           },
           {
-            "d": "B",
-            "r": 1
+            "d": "2",
+            "r": 2
           },
           {
-            "d": "B",
-            "r": 1
+            "d": "2",
+            "r": 2
           },
           {
-            "d": "B",
-            "r": 1
+            "d": "2",
+            "r": 2
           },
           {
-            "d": "B",
-            "r": 1
+            "d": "2",
+            "r": 2
           },
           {
-            "d": "B",
-            "r": 1
+            "d": "2",
+            "r": 2
           }
         ],
         "bowlers": [
@@ -214,10 +231,22 @@
             "balls": 6,
             "runs": 0,
             "wickets": 0
+          },
+          {
+            "name": "Vv",
+            "balls": 6,
+            "runs": 11,
+            "wickets": 0
+          },
+          {
+            "name": "Nn",
+            "balls": 4,
+            "runs": 24,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 0,
-        "needNextBowler": true
+        "currentBowlerIndex": 2,
+        "needNextBowler": false
       }
     ],
     "currentInningsIndex": 1,

@@ -531,14 +531,14 @@
     }
   ],
   "activeDraft": {
-    "id": "2026-03-18T14:06:50.554Z",
+    "id": "2026-03-18T14:35:40.131Z",
     "date": "2026-03-18",
     "status": "in_progress",
     "teams": [
       "Team A",
       "Team B"
     ],
-    "maxOvers": 2,
+    "maxOvers": 8,
     "innings": [
       {
         "battingTeam": "Team A",
@@ -591,8 +591,8 @@
     "result": null,
     "name": "Match 4 — 18 Mar 2026",
     "matchAuth": {
-      "username": "112",
-      "passwordHash": "6c658ee83fb7e812482494f3e416a876f63f418a0b8a1f5e76d47ee4177035cb"
+      "username": "eee",
+      "passwordHash": "730f75dafd73e047b86acb2dbd74e75dcb93272fa084a9082848f2341aa1abb6"
     }
   }
 }

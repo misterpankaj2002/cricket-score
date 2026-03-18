@@ -414,5 +414,69 @@
       }
     }
   ],
-  "activeDraft": null
+  "activeDraft": {
+    "id": "2026-03-18T14:05:25.828Z",
+    "date": "2026-03-18",
+    "status": "in_progress",
+    "teams": [
+      "Team A",
+      "Team B"
+    ],
+    "maxOvers": 2,
+    "innings": [
+      {
+        "battingTeam": "Team A",
+        "bowlingTeam": "Team B",
+        "batters": [],
+        "extras": {
+          "wides": 0,
+          "noBalls": 0,
+          "byes": 0,
+          "legByes": 0
+        },
+        "wickets": 0,
+        "totalRuns": 0,
+        "legalBalls": 0,
+        "completed": false,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
+        "needNextBatter": false,
+        "currentOverBalls": [],
+        "lastOverBalls": [],
+        "bowlers": [],
+        "currentBowlerIndex": -1,
+        "needNextBowler": true
+      },
+      {
+        "battingTeam": "Team B",
+        "bowlingTeam": "Team A",
+        "batters": [],
+        "extras": {
+          "wides": 0,
+          "noBalls": 0,
+          "byes": 0,
+          "legByes": 0
+        },
+        "wickets": 0,
+        "totalRuns": 0,
+        "legalBalls": 0,
+        "completed": false,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
+        "needNextBatter": false,
+        "currentOverBalls": [],
+        "lastOverBalls": [],
+        "bowlers": [],
+        "currentBowlerIndex": -1,
+        "needNextBowler": true
+      }
+    ],
+    "currentInningsIndex": 0,
+    "result": null,
+    "name": "Match 3 — 18 Mar 2026",
+    "matchAuth": {
+      "username": "pankaj",
+      "passwordHash": "e7451e6902c2b834f64c7b859e7859c74d9d044c4713755888dbe8c8fb5365c2"
+    }
+  }
 }

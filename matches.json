@@ -316,6 +316,110 @@
         "username": "pankaj1",
         "passwordHash": "c9b868ed91e7d043f5666feb14f344b8d3dd6d6c44cf605d28b72edab87e8c51"
       }
+    },
+    {
+      "id": "2026-03-18T01:31:22.733Z",
+      "date": "2026-03-18",
+      "status": "completed",
+      "teams": [
+        "Team A",
+        "Team B"
+      ],
+      "maxOvers": 8,
+      "innings": [
+        {
+          "battingTeam": "Team A",
+          "bowlingTeam": "Team B",
+          "batters": [
+            {
+              "name": "1",
+              "runs": 4,
+              "balls": 3,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "2",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 1,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 5,
+          "legalBalls": 3,
+          "completed": true,
+          "strikerIndex": 1,
+          "nonStrikerIndex": 0,
+          "needNextBatter": false,
+          "currentOverBalls": [
+            {
+              "d": "2",
+              "r": 2
+            },
+            {
+              "d": "2",
+              "r": 2
+            },
+            {
+              "d": "B",
+              "r": 1
+            }
+          ],
+          "lastOverBalls": [],
+          "bowlers": [
+            {
+              "name": "11",
+              "balls": 3,
+              "runs": 4,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 0,
+          "needNextBowler": false
+        },
+        {
+          "battingTeam": "Team B",
+          "bowlingTeam": "Team A",
+          "batters": [],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 0,
+          "legalBalls": 0,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [],
+          "bowlers": [],
+          "currentBowlerIndex": -1,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Team A won by 5 runs",
+      "name": "Match 3 — 17 Mar 2026",
+      "matchAuth": {
+        "username": "pankaj2",
+        "passwordHash": "8b645f37a6ee091bdd7a6ceb153396c637f76902d596a8fa1b199694dbf4ca63"
+      }
     }
   ],
   "activeDraft": null

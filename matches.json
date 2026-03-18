@@ -260,10 +260,10 @@
           },
           {
             "name": "2",
-            "runs": 0,
-            "balls": 0,
+            "runs": 36,
+            "balls": 6,
             "fours": 0,
-            "sixes": 0,
+            "sixes": 6,
             "howOut": null,
             "active": true
           }
@@ -275,11 +275,11 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 36,
-        "legalBalls": 6,
-        "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
+        "totalRuns": 72,
+        "legalBalls": 12,
+        "completed": true,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
@@ -314,9 +314,15 @@
             "balls": 6,
             "runs": 36,
             "wickets": 0
+          },
+          {
+            "name": "4",
+            "balls": 6,
+            "runs": 36,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 0,
+        "currentBowlerIndex": 1,
         "needNextBowler": true
       },
       {
@@ -343,7 +349,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 2 — 18 Mar 2026/2026",
     "matchAuth": {

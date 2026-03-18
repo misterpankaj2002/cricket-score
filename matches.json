@@ -18,11 +18,11 @@
           {
             "name": "David",
             "runs": 21,
-            "balls": 6,
+            "balls": 7,
             "fours": 1,
             "sixes": 2,
-            "howOut": null,
-            "active": true
+            "howOut": "out",
+            "active": false
           },
           {
             "name": "Tim",
@@ -40,67 +40,38 @@
           "byes": 0,
           "legByes": 0
         },
-        "wickets": 0,
+        "wickets": 1,
         "totalRuns": 29,
-        "legalBalls": 11,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
-        "needNextBatter": false,
-        "currentOverBalls": [
-          {
-            "d": "1",
-            "r": 1
-          },
-          {
-            "d": "·",
-            "r": 0
-          },
-          {
-            "d": "·",
-            "r": 0
-          },
-          {
-            "d": "3",
-            "r": 3
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
+        "legalBalls": 12,
+        "completed": true,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
+        "needNextBatter": true,
+        "currentOverBalls": [],
         "lastOverBalls": [
           {
-            "d": "3",
-            "r": 3
-          },
-          {
-            "d": "2",
-            "r": 2
-          },
-          {
             "d": "1",
             "r": 1
           },
           {
-            "d": "Wd",
-            "r": 1
+            "d": "·",
+            "r": 0
           },
           {
-            "d": "Nb",
-            "r": 1
+            "d": "·",
+            "r": 0
           },
           {
-            "d": "4",
-            "r": 4
+            "d": "3",
+            "r": 3
           },
           {
             "d": "6",
             "r": 6
           },
           {
-            "d": "1",
-            "r": 1
+            "d": "W",
+            "r": 0
           }
         ],
         "bowlers": [
@@ -112,13 +83,13 @@
           },
           {
             "name": "Ramesh",
-            "balls": 5,
+            "balls": 6,
             "runs": 10,
-            "wickets": 0
+            "wickets": 1
           }
         ],
         "currentBowlerIndex": 1,
-        "needNextBowler": false
+        "needNextBowler": true
       },
       {
         "battingTeam": "Lowell",
@@ -144,7 +115,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 1 — 18 Mar 2026",
     "matchAuth": {

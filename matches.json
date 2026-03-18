@@ -6,14 +6,14 @@
     "date": "2026-03-18",
     "status": "in_progress",
     "teams": [
-      "Team A",
-      "Team B"
+      "David",
+      "Tohan"
     ],
     "maxOvers": 8,
     "innings": [
       {
-        "battingTeam": "Team A",
-        "bowlingTeam": "Team B",
+        "battingTeam": "David",
+        "bowlingTeam": "Tohan",
         "batters": [
           {
             "name": "Raju",
@@ -54,8 +54,8 @@
         "needNextBowler": true
       },
       {
-        "battingTeam": "Team B",
-        "bowlingTeam": "Team A",
+        "battingTeam": "Tohan",
+        "bowlingTeam": "David",
         "batters": [],
         "extras": {
           "wides": 0,

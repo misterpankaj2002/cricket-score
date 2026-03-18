@@ -109,10 +109,10 @@
         "batters": [
           {
             "name": "Tim",
-            "runs": 27,
-            "balls": 9,
+            "runs": 40,
+            "balls": 13,
             "fours": 1,
-            "sixes": 2,
+            "sixes": 3,
             "howOut": "out",
             "active": false
           },
@@ -127,8 +127,8 @@
           },
           {
             "name": "Himanshu",
-            "runs": 0,
-            "balls": 0,
+            "runs": 6,
+            "balls": 2,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -142,8 +142,8 @@
           "legByes": 0
         },
         "wickets": 1,
-        "totalRuns": 35,
-        "legalBalls": 12,
+        "totalRuns": 54,
+        "legalBalls": 18,
         "completed": false,
         "strikerIndex": 2,
         "nonStrikerIndex": 0,
@@ -151,16 +151,16 @@
         "currentOverBalls": [],
         "lastOverBalls": [
           {
-            "d": "2",
-            "r": 2
+            "d": "3",
+            "r": 3
           },
           {
             "d": "3",
             "r": 3
           },
           {
-            "d": "4",
-            "r": 4
+            "d": "3",
+            "r": 3
           },
           {
             "d": "6",
@@ -171,8 +171,8 @@
             "r": 2
           },
           {
-            "d": "W",
-            "r": 0
+            "d": "2",
+            "r": 2
           }
         ],
         "bowlers": [
@@ -187,9 +187,15 @@
             "balls": 6,
             "runs": 17,
             "wickets": 1
+          },
+          {
+            "name": "Rohan",
+            "balls": 6,
+            "runs": 19,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 1,
+        "currentBowlerIndex": 2,
         "needNextBowler": true
       }
     ],

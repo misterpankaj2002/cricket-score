@@ -1,145 +1,189 @@
 {
   "version": 1,
-  "matches": [],
-  "activeDraft": {
-    "id": "2026-03-18T20:49:30.231Z",
-    "date": "2026-03-18",
-    "status": "in_progress",
-    "teams": [
-      "Nashua",
-      "Lowell"
-    ],
-    "maxOvers": 2,
-    "innings": [
-      {
-        "battingTeam": "Nashua",
-        "bowlingTeam": "Lowell",
-        "batters": [
-          {
-            "name": "David",
-            "runs": 21,
-            "balls": 7,
-            "fours": 1,
-            "sixes": 2,
-            "howOut": "out",
-            "active": false
+  "matches": [
+    {
+      "id": "2026-03-18T20:49:30.231Z",
+      "date": "2026-03-18",
+      "status": "completed",
+      "teams": [
+        "Nashua",
+        "Lowell"
+      ],
+      "maxOvers": 2,
+      "innings": [
+        {
+          "battingTeam": "Nashua",
+          "bowlingTeam": "Lowell",
+          "batters": [
+            {
+              "name": "David",
+              "runs": 21,
+              "balls": 7,
+              "fours": 1,
+              "sixes": 2,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "Tim",
+              "runs": 6,
+              "balls": 5,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 1,
+            "noBalls": 1,
+            "byes": 0,
+            "legByes": 0
           },
-          {
-            "name": "Tim",
-            "runs": 6,
-            "balls": 5,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          }
-        ],
-        "extras": {
-          "wides": 1,
-          "noBalls": 1,
-          "byes": 0,
-          "legByes": 0
+          "wickets": 1,
+          "totalRuns": 29,
+          "legalBalls": 12,
+          "completed": true,
+          "strikerIndex": 1,
+          "nonStrikerIndex": 0,
+          "needNextBatter": true,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "1",
+              "r": 1
+            },
+            {
+              "d": "·",
+              "r": 0
+            },
+            {
+              "d": "·",
+              "r": 0
+            },
+            {
+              "d": "3",
+              "r": 3
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "W",
+              "r": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "Gaurav",
+              "balls": 6,
+              "runs": 19,
+              "wickets": 0
+            },
+            {
+              "name": "Ramesh",
+              "balls": 6,
+              "runs": 10,
+              "wickets": 1
+            }
+          ],
+          "currentBowlerIndex": 1,
+          "needNextBowler": true
         },
-        "wickets": 1,
-        "totalRuns": 29,
-        "legalBalls": 12,
-        "completed": true,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
-        "needNextBatter": true,
-        "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "1",
-            "r": 1
+        {
+          "battingTeam": "Lowell",
+          "bowlingTeam": "Nashua",
+          "batters": [
+            {
+              "name": "Vijay",
+              "runs": 18,
+              "balls": 7,
+              "fours": 1,
+              "sixes": 1,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "Raman",
+              "runs": 5,
+              "balls": 5,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 2,
+            "byes": 2,
+            "legByes": 0
           },
-          {
-            "d": "·",
-            "r": 0
-          },
-          {
-            "d": "·",
-            "r": 0
-          },
-          {
-            "d": "3",
-            "r": 3
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "W",
-            "r": 0
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "Gaurav",
-            "balls": 6,
-            "runs": 19,
-            "wickets": 0
-          },
-          {
-            "name": "Ramesh",
-            "balls": 6,
-            "runs": 10,
-            "wickets": 1
-          }
-        ],
-        "currentBowlerIndex": 1,
-        "needNextBowler": true
-      },
-      {
-        "battingTeam": "Lowell",
-        "bowlingTeam": "Nashua",
-        "batters": [
-          {
-            "name": "Vijay",
-            "runs": 0,
-            "balls": 0,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "Raman",
-            "runs": 0,
-            "balls": 0,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          }
-        ],
-        "extras": {
-          "wides": 0,
-          "noBalls": 0,
-          "byes": 0,
-          "legByes": 0
-        },
-        "wickets": 0,
-        "totalRuns": 0,
-        "legalBalls": 0,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
-        "needNextBowler": true
+          "wickets": 0,
+          "totalRuns": 27,
+          "legalBalls": 12,
+          "completed": true,
+          "strikerIndex": 1,
+          "nonStrikerIndex": 0,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "4",
+              "r": 4
+            },
+            {
+              "d": "2",
+              "r": 2
+            },
+            {
+              "d": "1",
+              "r": 1
+            },
+            {
+              "d": "Nb",
+              "r": 1
+            },
+            {
+              "d": "2",
+              "r": 2
+            },
+            {
+              "d": "1",
+              "r": 1
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "David",
+              "balls": 6,
+              "runs": 8,
+              "wickets": 0
+            },
+            {
+              "name": "Tim",
+              "balls": 6,
+              "runs": 17,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 1,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Nashua won by 2 runs",
+      "name": "Match 1 — 18 Mar 2026",
+      "matchAuth": {
+        "username": "pankaj",
+        "passwordHash": "7c78eea7a591b0c8a4dad680372e35ca12e11cffdac5c69a39700c8014fbcc82"
       }
-    ],
-    "currentInningsIndex": 1,
-    "result": null,
-    "name": "Match 1 — 18 Mar 2026",
-    "matchAuth": {
-      "username": "pankaj",
-      "passwordHash": "7c78eea7a591b0c8a4dad680372e35ca12e11cffdac5c69a39700c8014fbcc82"
     }
-  }
+  ],
+  "activeDraft": null
 }

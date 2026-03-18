@@ -26,10 +26,10 @@
           },
           {
             "name": "Rohan",
-            "runs": 12,
-            "balls": 5,
+            "runs": 40,
+            "balls": 11,
             "fours": 0,
-            "sixes": 1,
+            "sixes": 5,
             "howOut": null,
             "active": true
           }
@@ -41,37 +41,37 @@
           "legByes": 2
         },
         "wickets": 0,
-        "totalRuns": 35,
-        "legalBalls": 12,
+        "totalRuns": 63,
+        "legalBalls": 18,
         "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
           {
-            "d": "2",
-            "r": 2
-          },
-          {
-            "d": "3",
-            "r": 3
+            "d": "6",
+            "r": 6
           },
           {
             "d": "6",
             "r": 6
           },
           {
-            "d": "3",
-            "r": 3
+            "d": "6",
+            "r": 6
           },
           {
-            "d": "3",
-            "r": 3
+            "d": "6",
+            "r": 6
           },
           {
-            "d": "3",
-            "r": 3
+            "d": "2",
+            "r": 2
+          },
+          {
+            "d": "2",
+            "r": 2
           }
         ],
         "bowlers": [
@@ -86,9 +86,15 @@
             "balls": 6,
             "runs": 20,
             "wickets": 0
+          },
+          {
+            "name": "Raju",
+            "balls": 6,
+            "runs": 28,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 1,
+        "currentBowlerIndex": 2,
         "needNextBowler": true
       },
       {

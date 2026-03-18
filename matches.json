@@ -531,94 +531,37 @@
     }
   ],
   "activeDraft": {
-    "id": "2026-03-18T14:35:40.131Z",
+    "id": "2026-03-18T14:40:33.855Z",
     "date": "2026-03-18",
     "status": "in_progress",
     "teams": [
       "Team A",
       "Team B"
     ],
-    "maxOvers": 8,
+    "maxOvers": 2,
     "innings": [
       {
         "battingTeam": "Team A",
         "bowlingTeam": "Team B",
-        "batters": [
-          {
-            "name": "Edds",
-            "runs": 2,
-            "balls": 3,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "Ddd",
-            "runs": 6,
-            "balls": 3,
-            "fours": 0,
-            "sixes": 1,
-            "howOut": null,
-            "active": true
-          }
-        ],
+        "batters": [],
         "extras": {
           "wides": 0,
           "noBalls": 0,
-          "byes": 3,
-          "legByes": 1
+          "byes": 0,
+          "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 12,
-        "legalBalls": 6,
+        "totalRuns": 0,
+        "legalBalls": 0,
         "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
         "needNextBatter": false,
         "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "2",
-            "r": 2
-          },
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "Lb",
-            "r": 1
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "B",
-            "r": 1
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "Sd",
-            "balls": 6,
-            "runs": 8,
-            "wickets": 0
-          },
-          {
-            "name": "Ddd",
-            "balls": 0,
-            "runs": 0,
-            "wickets": 0
-          }
-        ],
-        "currentBowlerIndex": 1,
-        "needNextBowler": false
+        "lastOverBalls": [],
+        "bowlers": [],
+        "currentBowlerIndex": -1,
+        "needNextBowler": true
       },
       {
         "battingTeam": "Team B",
@@ -648,8 +591,8 @@
     "result": null,
     "name": "Match 4 — 18 Mar 2026",
     "matchAuth": {
-      "username": "eee",
-      "passwordHash": "730f75dafd73e047b86acb2dbd74e75dcb93272fa084a9082848f2341aa1abb6"
+      "username": "111",
+      "passwordHash": "0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c"
     }
   }
 }

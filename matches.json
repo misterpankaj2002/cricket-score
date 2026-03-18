@@ -427,7 +427,26 @@
       {
         "battingTeam": "Team A",
         "bowlingTeam": "Team B",
-        "batters": [],
+        "batters": [
+          {
+            "name": "David",
+            "runs": 0,
+            "balls": 0,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
+          },
+          {
+            "name": "Gaurav",
+            "runs": 0,
+            "balls": 0,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
+          }
+        ],
         "extras": {
           "wides": 0,
           "noBalls": 0,

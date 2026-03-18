@@ -17,8 +17,8 @@
         "batters": [
           {
             "name": "11",
-            "runs": 6,
-            "balls": 3,
+            "runs": 10,
+            "balls": 6,
             "fours": 0,
             "sixes": 1,
             "howOut": null,
@@ -35,8 +35,8 @@
           },
           {
             "name": "55",
-            "runs": 16,
-            "balls": 4,
+            "runs": 21,
+            "balls": 8,
             "fours": 0,
             "sixes": 2,
             "howOut": null,
@@ -46,40 +46,27 @@
         "extras": {
           "wides": 0,
           "noBalls": 1,
-          "byes": 3,
+          "byes": 5,
           "legByes": 0
         },
         "wickets": 1,
-        "totalRuns": 31,
-        "legalBalls": 11,
+        "totalRuns": 42,
+        "legalBalls": 18,
         "completed": false,
-        "strikerIndex": 2,
-        "nonStrikerIndex": 0,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 2,
         "needNextBatter": false,
-        "currentOverBalls": [
-          {
-            "d": "W",
-            "r": 0
-          },
-          {
-            "d": "2",
-            "r": 2
-          },
-          {
-            "d": "2",
-            "r": 2
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
+        "currentOverBalls": [],
         "lastOverBalls": [
           {
+            "d": "2",
+            "r": 2
+          },
+          {
+            "d": "2",
+            "r": 2
+          },
+          {
             "d": "B",
             "r": 1
           },
@@ -88,20 +75,8 @@
             "r": 2
           },
           {
-            "d": "3",
-            "r": 3
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "Nb",
-            "r": 1
+            "d": "2",
+            "r": 2
           },
           {
             "d": "B",
@@ -117,13 +92,19 @@
           },
           {
             "name": "44",
-            "balls": 5,
-            "runs": 16,
+            "balls": 6,
+            "runs": 17,
             "wickets": 1
+          },
+          {
+            "name": "11",
+            "balls": 6,
+            "runs": 8,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 1,
-        "needNextBowler": false
+        "currentBowlerIndex": 2,
+        "needNextBowler": true
       },
       {
         "battingTeam": "Team B",

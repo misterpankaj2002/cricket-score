@@ -17,17 +17,17 @@
         "batters": [
           {
             "name": "David",
-            "runs": 0,
-            "balls": 0,
-            "fours": 0,
-            "sixes": 0,
+            "runs": 14,
+            "balls": 4,
+            "fours": 1,
+            "sixes": 1,
             "howOut": null,
             "active": true
           },
           {
             "name": "Tim",
-            "runs": 0,
-            "balls": 0,
+            "runs": 3,
+            "balls": 2,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -35,22 +35,62 @@
           }
         ],
         "extras": {
-          "wides": 0,
-          "noBalls": 0,
+          "wides": 1,
+          "noBalls": 1,
           "byes": 0,
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 0,
-        "legalBalls": 0,
+        "totalRuns": 19,
+        "legalBalls": 6,
         "completed": false,
         "strikerIndex": 0,
         "nonStrikerIndex": 1,
         "needNextBatter": false,
         "currentOverBalls": [],
-        "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
+        "lastOverBalls": [
+          {
+            "d": "3",
+            "r": 3
+          },
+          {
+            "d": "2",
+            "r": 2
+          },
+          {
+            "d": "1",
+            "r": 1
+          },
+          {
+            "d": "Wd",
+            "r": 1
+          },
+          {
+            "d": "Nb",
+            "r": 1
+          },
+          {
+            "d": "4",
+            "r": 4
+          },
+          {
+            "d": "6",
+            "r": 6
+          },
+          {
+            "d": "1",
+            "r": 1
+          }
+        ],
+        "bowlers": [
+          {
+            "name": "Gaurav",
+            "balls": 6,
+            "runs": 19,
+            "wickets": 0
+          }
+        ],
+        "currentBowlerIndex": 0,
         "needNextBowler": true
       },
       {

@@ -148,24 +148,75 @@
       {
         "battingTeam": "Team B",
         "bowlingTeam": "Team A",
-        "batters": [],
+        "batters": [
+          {
+            "name": "Ww",
+            "runs": 0,
+            "balls": 3,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
+          },
+          {
+            "name": "Ee",
+            "runs": 0,
+            "balls": 3,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
+          }
+        ],
         "extras": {
           "wides": 0,
           "noBalls": 0,
-          "byes": 0,
+          "byes": 6,
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 0,
-        "legalBalls": 0,
+        "totalRuns": 6,
+        "legalBalls": 6,
         "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
         "needNextBatter": false,
         "currentOverBalls": [],
-        "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
+        "lastOverBalls": [
+          {
+            "d": "B",
+            "r": 1
+          },
+          {
+            "d": "B",
+            "r": 1
+          },
+          {
+            "d": "B",
+            "r": 1
+          },
+          {
+            "d": "B",
+            "r": 1
+          },
+          {
+            "d": "B",
+            "r": 1
+          },
+          {
+            "d": "B",
+            "r": 1
+          }
+        ],
+        "bowlers": [
+          {
+            "name": "Dd",
+            "balls": 6,
+            "runs": 0,
+            "wickets": 0
+          }
+        ],
+        "currentBowlerIndex": 0,
         "needNextBowler": true
       }
     ],

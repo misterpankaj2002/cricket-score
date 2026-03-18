@@ -17,8 +17,8 @@
         "batters": [
           {
             "name": "Raju",
-            "runs": 20,
-            "balls": 7,
+            "runs": 27,
+            "balls": 10,
             "fours": 0,
             "sixes": 1,
             "howOut": null,
@@ -26,8 +26,8 @@
           },
           {
             "name": "Rohan",
-            "runs": 40,
-            "balls": 11,
+            "runs": 47,
+            "balls": 14,
             "fours": 0,
             "sixes": 5,
             "howOut": null,
@@ -41,33 +41,33 @@
           "legByes": 2
         },
         "wickets": 0,
-        "totalRuns": 63,
-        "legalBalls": 18,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "totalRuns": 77,
+        "legalBalls": 24,
+        "completed": true,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
           {
-            "d": "6",
-            "r": 6
+            "d": "2",
+            "r": 2
           },
           {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
+            "d": "3",
+            "r": 3
           },
           {
             "d": "2",
             "r": 2
+          },
+          {
+            "d": "2",
+            "r": 2
+          },
+          {
+            "d": "3",
+            "r": 3
           },
           {
             "d": "2",
@@ -92,9 +92,15 @@
             "balls": 6,
             "runs": 28,
             "wickets": 0
+          },
+          {
+            "name": "Tim",
+            "balls": 6,
+            "runs": 14,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 2,
+        "currentBowlerIndex": 3,
         "needNextBowler": true
       },
       {
@@ -121,7 +127,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 1 — 17 Mar 2026",
     "matchAuth": {

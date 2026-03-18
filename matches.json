@@ -124,6 +124,15 @@
             "sixes": 0,
             "howOut": null,
             "active": true
+          },
+          {
+            "name": "Himanshu",
+            "runs": 0,
+            "balls": 0,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
           }
         ],
         "extras": {
@@ -136,9 +145,9 @@
         "totalRuns": 35,
         "legalBalls": 12,
         "completed": false,
-        "strikerIndex": 1,
+        "strikerIndex": 2,
         "nonStrikerIndex": 0,
-        "needNextBatter": true,
+        "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
           {

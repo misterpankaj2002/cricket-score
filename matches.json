@@ -337,6 +337,15 @@
             "sixes": 0,
             "howOut": null,
             "active": true
+          },
+          {
+            "name": "6",
+            "runs": 0,
+            "balls": 0,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
           }
         ],
         "extras": {

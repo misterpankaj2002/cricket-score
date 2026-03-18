@@ -412,122 +412,123 @@
         "username": "vatshal",
         "passwordHash": "e96d252d7e8b00f6fba8f0674d58228408074d531315e69571e87c44e2b1c5ed"
       }
+    },
+    {
+      "id": "2026-03-18T14:05:25.828Z",
+      "date": "2026-03-18",
+      "status": "completed",
+      "teams": [
+        "Team A",
+        "Team B"
+      ],
+      "maxOvers": 2,
+      "innings": [
+        {
+          "battingTeam": "Team A",
+          "bowlingTeam": "Team B",
+          "batters": [
+            {
+              "name": "David",
+              "runs": 36,
+              "balls": 6,
+              "fours": 0,
+              "sixes": 6,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "Gaurav",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 36,
+          "legalBalls": 6,
+          "completed": true,
+          "strikerIndex": 1,
+          "nonStrikerIndex": 0,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "Pankaj",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 0,
+          "needNextBowler": true
+        },
+        {
+          "battingTeam": "Team B",
+          "bowlingTeam": "Team A",
+          "batters": [],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 0,
+          "legalBalls": 0,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [],
+          "bowlers": [],
+          "currentBowlerIndex": -1,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Team A won by 36 runs",
+      "name": "Match 3 — 18 Mar 2026",
+      "matchAuth": {
+        "username": "pankaj",
+        "passwordHash": "e7451e6902c2b834f64c7b859e7859c74d9d044c4713755888dbe8c8fb5365c2"
+      }
     }
   ],
-  "activeDraft": {
-    "id": "2026-03-18T14:05:25.828Z",
-    "date": "2026-03-18",
-    "status": "in_progress",
-    "teams": [
-      "Team A",
-      "Team B"
-    ],
-    "maxOvers": 2,
-    "innings": [
-      {
-        "battingTeam": "Team A",
-        "bowlingTeam": "Team B",
-        "batters": [
-          {
-            "name": "David",
-            "runs": 36,
-            "balls": 6,
-            "fours": 0,
-            "sixes": 6,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "Gaurav",
-            "runs": 0,
-            "balls": 0,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          }
-        ],
-        "extras": {
-          "wides": 0,
-          "noBalls": 0,
-          "byes": 0,
-          "legByes": 0
-        },
-        "wickets": 0,
-        "totalRuns": 36,
-        "legalBalls": 6,
-        "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "Pankaj",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          }
-        ],
-        "currentBowlerIndex": 0,
-        "needNextBowler": true
-      },
-      {
-        "battingTeam": "Team B",
-        "bowlingTeam": "Team A",
-        "batters": [],
-        "extras": {
-          "wides": 0,
-          "noBalls": 0,
-          "byes": 0,
-          "legByes": 0
-        },
-        "wickets": 0,
-        "totalRuns": 0,
-        "legalBalls": 0,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
-        "needNextBowler": true
-      }
-    ],
-    "currentInningsIndex": 0,
-    "result": null,
-    "name": "Match 3 — 18 Mar 2026",
-    "matchAuth": {
-      "username": "pankaj",
-      "passwordHash": "e7451e6902c2b834f64c7b859e7859c74d9d044c4713755888dbe8c8fb5365c2"
-    }
-  }
+  "activeDraft": null
 }

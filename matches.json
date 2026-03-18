@@ -17,8 +17,8 @@
         "batters": [
           {
             "name": "11",
-            "runs": 13,
-            "balls": 10,
+            "runs": 18,
+            "balls": 12,
             "fours": 0,
             "sixes": 1,
             "howOut": null,
@@ -35,8 +35,8 @@
           },
           {
             "name": "55",
-            "runs": 22,
-            "balls": 10,
+            "runs": 24,
+            "balls": 12,
             "fours": 0,
             "sixes": 2,
             "howOut": null,
@@ -47,16 +47,33 @@
           "wides": 1,
           "noBalls": 4,
           "byes": 7,
-          "legByes": 1
+          "legByes": 2
         },
         "wickets": 1,
-        "totalRuns": 53,
-        "legalBalls": 24,
-        "completed": false,
+        "totalRuns": 61,
+        "legalBalls": 28,
+        "completed": true,
         "strikerIndex": 0,
         "nonStrikerIndex": 2,
         "needNextBatter": false,
-        "currentOverBalls": [],
+        "currentOverBalls": [
+          {
+            "d": "2",
+            "r": 2
+          },
+          {
+            "d": "3",
+            "r": 3
+          },
+          {
+            "d": "2",
+            "r": 2
+          },
+          {
+            "d": "Lb",
+            "r": 1
+          }
+        ],
         "lastOverBalls": [
           {
             "d": "Wd",
@@ -117,10 +134,16 @@
             "balls": 12,
             "runs": 16,
             "wickets": 0
+          },
+          {
+            "name": "Fge",
+            "balls": 4,
+            "runs": 7,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 2,
-        "needNextBowler": true
+        "currentBowlerIndex": 3,
+        "needNextBowler": false
       },
       {
         "battingTeam": "Team B",
@@ -146,7 +169,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 1 — 17 Mar 2026",
     "matchAuth": {

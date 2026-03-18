@@ -236,14 +236,14 @@
     }
   ],
   "activeDraft": {
-    "id": "2026-03-18T02:06:50.354Z",
+    "id": "2026-03-18T12:04:16.791Z",
     "date": "2026-03-18",
     "status": "in_progress",
     "teams": [
       "Team A",
       "Team B"
     ],
-    "maxOvers": 8,
+    "maxOvers": 2,
     "innings": [
       {
         "battingTeam": "Team A",
@@ -294,10 +294,10 @@
     ],
     "currentInningsIndex": 0,
     "result": null,
-    "name": "Match 2 — 17 Mar 2026",
+    "name": "Match 2 — 18 Mar 2026/2026",
     "matchAuth": {
-      "username": "ppp",
-      "passwordHash": "c4289629b08bc4d61411aaa6d6d4a0c3c5f8c1e848e282976e29b6bed5aeedc7"
+      "username": "vatshal",
+      "passwordHash": "e96d252d7e8b00f6fba8f0674d58228408074d531315e69571e87c44e2b1c5ed"
     }
   }
 }

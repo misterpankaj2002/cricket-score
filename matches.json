@@ -17,17 +17,17 @@
         "batters": [
           {
             "name": "David",
-            "runs": 14,
-            "balls": 4,
+            "runs": 21,
+            "balls": 6,
             "fours": 1,
-            "sixes": 1,
+            "sixes": 2,
             "howOut": null,
             "active": true
           },
           {
             "name": "Tim",
-            "runs": 3,
-            "balls": 2,
+            "runs": 6,
+            "balls": 5,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -41,13 +41,34 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 19,
-        "legalBalls": 6,
+        "totalRuns": 29,
+        "legalBalls": 11,
         "completed": false,
         "strikerIndex": 0,
         "nonStrikerIndex": 1,
         "needNextBatter": false,
-        "currentOverBalls": [],
+        "currentOverBalls": [
+          {
+            "d": "1",
+            "r": 1
+          },
+          {
+            "d": "·",
+            "r": 0
+          },
+          {
+            "d": "·",
+            "r": 0
+          },
+          {
+            "d": "3",
+            "r": 3
+          },
+          {
+            "d": "6",
+            "r": 6
+          }
+        ],
         "lastOverBalls": [
           {
             "d": "3",
@@ -88,10 +109,16 @@
             "balls": 6,
             "runs": 19,
             "wickets": 0
+          },
+          {
+            "name": "Ramesh",
+            "balls": 5,
+            "runs": 10,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 0,
-        "needNextBowler": true
+        "currentBowlerIndex": 1,
+        "needNextBowler": false
       },
       {
         "battingTeam": "Lowell",

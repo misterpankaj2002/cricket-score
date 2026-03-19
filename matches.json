@@ -355,9 +355,16 @@
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
-        "needNextBowler": true
+        "bowlers": [
+          {
+            "name": "b1",
+            "balls": 0,
+            "runs": 0,
+            "wickets": 0
+          }
+        ],
+        "currentBowlerIndex": 0,
+        "needNextBowler": false
       },
       {
         "battingTeam": "Team B",

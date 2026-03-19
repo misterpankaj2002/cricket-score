@@ -341,17 +341,17 @@
           }
         ],
         "extras": {
-          "wides": 0,
-          "noBalls": 1,
-          "byes": 0,
+          "wides": 1,
+          "noBalls": 2,
+          "byes": 1,
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 3,
+        "totalRuns": 6,
         "legalBalls": 6,
         "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
@@ -380,15 +380,23 @@
             "r": 0
           },
           {
-            "d": "·",
-            "r": 0
+            "d": "Wd",
+            "r": 1
+          },
+          {
+            "d": "Nb",
+            "r": 1
+          },
+          {
+            "d": "B",
+            "r": 1
           }
         ],
         "bowlers": [
           {
             "name": "b1",
             "balls": 6,
-            "runs": 3,
+            "runs": 5,
             "wickets": 0
           }
         ],

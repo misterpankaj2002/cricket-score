@@ -323,8 +323,8 @@
         "batters": [
           {
             "name": "a",
-            "runs": 1,
-            "balls": 3,
+            "runs": 4,
+            "balls": 6,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -332,8 +332,8 @@
           },
           {
             "name": "b",
-            "runs": 1,
-            "balls": 3,
+            "runs": 4,
+            "balls": 6,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -347,11 +347,11 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 6,
-        "legalBalls": 6,
+        "totalRuns": 12,
+        "legalBalls": 12,
         "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
@@ -360,15 +360,7 @@
             "r": 1
           },
           {
-            "d": "·",
-            "r": 0
-          },
-          {
-            "d": "·",
-            "r": 0
-          },
-          {
-            "d": "Nb",
+            "d": "1",
             "r": 1
           },
           {
@@ -376,19 +368,15 @@
             "r": 1
           },
           {
-            "d": "·",
-            "r": 0
-          },
-          {
-            "d": "Wd",
+            "d": "1",
             "r": 1
           },
           {
-            "d": "Nb",
+            "d": "1",
             "r": 1
           },
           {
-            "d": "B",
+            "d": "1",
             "r": 1
           }
         ],
@@ -398,9 +386,15 @@
             "balls": 6,
             "runs": 5,
             "wickets": 0
+          },
+          {
+            "name": "b2",
+            "balls": 6,
+            "runs": 6,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 0,
+        "currentBowlerIndex": 1,
         "needNextBowler": true
       },
       {

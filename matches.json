@@ -349,7 +349,7 @@
         "wickets": 0,
         "totalRuns": 18,
         "legalBalls": 18,
-        "completed": false,
+        "completed": true,
         "strikerIndex": 0,
         "nonStrikerIndex": 1,
         "needNextBatter": false,
@@ -421,7 +421,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 3 — 19 Mar 2026",
     "matchAuth": {

@@ -333,7 +333,16 @@
           {
             "name": "22",
             "runs": 5,
-            "balls": 4,
+            "balls": 5,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": "out",
+            "active": false
+          },
+          {
+            "name": "66",
+            "runs": 4,
+            "balls": 2,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -346,14 +355,15 @@
           "byes": 4,
           "legByes": 1
         },
-        "wickets": 0,
-        "totalRuns": 16,
-        "legalBalls": 9,
+        "wickets": 1,
+        "totalRuns": 20,
+        "legalBalls": 12,
         "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 2,
         "needNextBatter": false,
-        "currentOverBalls": [
+        "currentOverBalls": [],
+        "lastOverBalls": [
           {
             "d": "1",
             "r": 1
@@ -369,36 +379,18 @@
           {
             "d": "Nb",
             "r": 1
-          }
-        ],
-        "lastOverBalls": [
-          {
-            "d": "3",
-            "r": 3
           },
           {
-            "d": "Nb",
-            "r": 1
-          },
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "B",
-            "r": 1
+            "d": "W",
+            "r": 0
           },
           {
             "d": "2",
             "r": 2
           },
           {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "Lb",
-            "r": 1
+            "d": "2",
+            "r": 2
           }
         ],
         "bowlers": [
@@ -410,13 +402,13 @@
           },
           {
             "name": "44",
-            "balls": 3,
-            "runs": 5,
-            "wickets": 0
+            "balls": 6,
+            "runs": 9,
+            "wickets": 1
           }
         ],
         "currentBowlerIndex": 1,
-        "needNextBowler": false
+        "needNextBowler": true
       },
       {
         "battingTeam": "Team B",

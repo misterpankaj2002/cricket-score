@@ -320,25 +320,72 @@
       {
         "battingTeam": "Team A",
         "bowlingTeam": "Team B",
-        "batters": [],
+        "batters": [
+          {
+            "name": "111",
+            "runs": 11,
+            "balls": 3,
+            "fours": 1,
+            "sixes": 1,
+            "howOut": null,
+            "active": true
+          },
+          {
+            "name": "22",
+            "runs": 2,
+            "balls": 2,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
+          }
+        ],
         "extras": {
           "wides": 0,
           "noBalls": 0,
-          "byes": 0,
+          "byes": 1,
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 0,
-        "legalBalls": 0,
-        "completed": false,
+        "totalRuns": 14,
+        "legalBalls": 5,
+        "completed": true,
         "strikerIndex": 0,
         "nonStrikerIndex": 1,
         "needNextBatter": false,
-        "currentOverBalls": [],
+        "currentOverBalls": [
+          {
+            "d": "1",
+            "r": 1
+          },
+          {
+            "d": "2",
+            "r": 2
+          },
+          {
+            "d": "B",
+            "r": 1
+          },
+          {
+            "d": "4",
+            "r": 4
+          },
+          {
+            "d": "6",
+            "r": 6
+          }
+        ],
         "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
-        "needNextBowler": true
+        "bowlers": [
+          {
+            "name": "333",
+            "balls": 5,
+            "runs": 13,
+            "wickets": 0
+          }
+        ],
+        "currentBowlerIndex": 0,
+        "needNextBowler": false
       },
       {
         "battingTeam": "Team B",
@@ -364,7 +411,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 3 — 1 Apr 2026",
     "matchAuth": {

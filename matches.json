@@ -305,67 +305,6 @@
         "username": "eee",
         "passwordHash": "730f75dafd73e047b86acb2dbd74e75dcb93272fa084a9082848f2341aa1abb6"
       }
-    },
-    {
-      "id": "2026-03-24T00:04:45.616Z",
-      "date": "2026-03-24",
-      "status": "completed",
-      "teams": [
-        "Team A",
-        "Team B"
-      ],
-      "maxOvers": 8,
-      "innings": [
-        {
-          "battingTeam": "Team A",
-          "bowlingTeam": "Team B",
-          "batters": [],
-          "extras": {
-            "wides": 0,
-            "noBalls": 0,
-            "byes": 0,
-            "legByes": 0
-          },
-          "wickets": 0,
-          "totalRuns": 0,
-          "legalBalls": 0,
-          "completed": true,
-          "strikerIndex": 0,
-          "nonStrikerIndex": 1,
-          "needNextBatter": false,
-          "currentOverBalls": [],
-          "lastOverBalls": [],
-          "bowlers": [],
-          "currentBowlerIndex": -1,
-          "needNextBowler": true
-        },
-        {
-          "battingTeam": "Team B",
-          "bowlingTeam": "Team A",
-          "batters": [],
-          "extras": {
-            "wides": 0,
-            "noBalls": 0,
-            "byes": 0,
-            "legByes": 0
-          },
-          "wickets": 0,
-          "totalRuns": 0,
-          "legalBalls": 0,
-          "completed": true,
-          "strikerIndex": 0,
-          "nonStrikerIndex": 1,
-          "needNextBatter": false,
-          "currentOverBalls": [],
-          "lastOverBalls": [],
-          "bowlers": [],
-          "currentBowlerIndex": -1,
-          "needNextBowler": true
-        }
-      ],
-      "currentInningsIndex": 1,
-      "result": "Match tied",
-      "name": "Match 3 — 23 Mar 2026"
     }
   ],
   "activeDraft": null

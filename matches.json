@@ -305,141 +305,68 @@
         "username": "eee",
         "passwordHash": "730f75dafd73e047b86acb2dbd74e75dcb93272fa084a9082848f2341aa1abb6"
       }
+    },
+    {
+      "id": "2026-03-24T00:04:45.616Z",
+      "date": "2026-03-24",
+      "status": "completed",
+      "teams": [
+        "Team A",
+        "Team B"
+      ],
+      "maxOvers": 8,
+      "innings": [
+        {
+          "battingTeam": "Team A",
+          "bowlingTeam": "Team B",
+          "batters": [],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 0,
+          "legalBalls": 0,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [],
+          "bowlers": [],
+          "currentBowlerIndex": -1,
+          "needNextBowler": true
+        },
+        {
+          "battingTeam": "Team B",
+          "bowlingTeam": "Team A",
+          "batters": [],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 0,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 0,
+          "legalBalls": 0,
+          "completed": true,
+          "strikerIndex": 0,
+          "nonStrikerIndex": 1,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [],
+          "bowlers": [],
+          "currentBowlerIndex": -1,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "Match tied",
+      "name": "Match 3 — 23 Mar 2026"
     }
   ],
-  "activeDraft": {
-    "id": "2026-03-24T00:07:22.571Z",
-    "date": "2026-03-24",
-    "status": "in_progress",
-    "teams": [
-      "Team A",
-      "Team B"
-    ],
-    "maxOvers": 8,
-    "innings": [
-      {
-        "battingTeam": "Team A",
-        "bowlingTeam": "Team B",
-        "batters": [
-          {
-            "name": "11",
-            "runs": 4,
-            "balls": 5,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "22",
-            "runs": 5,
-            "balls": 5,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "66",
-            "runs": 4,
-            "balls": 2,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          }
-        ],
-        "extras": {
-          "wides": 0,
-          "noBalls": 2,
-          "byes": 4,
-          "legByes": 1
-        },
-        "wickets": 1,
-        "totalRuns": 20,
-        "legalBalls": 12,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 2,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "1",
-            "r": 1
-          },
-          {
-            "d": "3",
-            "r": 3
-          },
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "Nb",
-            "r": 1
-          },
-          {
-            "d": "W",
-            "r": 0
-          },
-          {
-            "d": "2",
-            "r": 2
-          },
-          {
-            "d": "2",
-            "r": 2
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "33",
-            "balls": 6,
-            "runs": 6,
-            "wickets": 0
-          },
-          {
-            "name": "44",
-            "balls": 6,
-            "runs": 9,
-            "wickets": 1
-          }
-        ],
-        "currentBowlerIndex": 1,
-        "needNextBowler": true
-      },
-      {
-        "battingTeam": "Team B",
-        "bowlingTeam": "Team A",
-        "batters": [],
-        "extras": {
-          "wides": 0,
-          "noBalls": 0,
-          "byes": 0,
-          "legByes": 0
-        },
-        "wickets": 0,
-        "totalRuns": 0,
-        "legalBalls": 0,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
-        "needNextBowler": true
-      }
-    ],
-    "currentInningsIndex": 0,
-    "result": null,
-    "name": "Match 3 — 23 Mar 2026",
-    "matchAuth": {
-      "username": "1111",
-      "passwordHash": "0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c"
-    }
-  }
+  "activeDraft": null
 }

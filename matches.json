@@ -305,275 +305,276 @@
         "username": "eee",
         "passwordHash": "730f75dafd73e047b86acb2dbd74e75dcb93272fa084a9082848f2341aa1abb6"
       }
+    },
+    {
+      "id": "2026-05-09T14:49:53.347Z",
+      "date": "2026-05-09",
+      "status": "completed",
+      "teams": [
+        "nashua",
+        "bicentiannll"
+      ],
+      "maxOvers": 10,
+      "innings": [
+        {
+          "battingTeam": "nashua",
+          "bowlingTeam": "bicentiannll",
+          "batters": [
+            {
+              "name": "vardaan",
+              "runs": 200,
+              "balls": 35,
+              "fours": 5,
+              "sixes": 30,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "vatshal",
+              "runs": 140,
+              "balls": 25,
+              "fours": 2,
+              "sixes": 22,
+              "howOut": null,
+              "active": true
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 7,
+            "byes": 1,
+            "legByes": 0
+          },
+          "wickets": 0,
+          "totalRuns": 348,
+          "legalBalls": 60,
+          "completed": true,
+          "strikerIndex": 1,
+          "nonStrikerIndex": 0,
+          "needNextBatter": false,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            },
+            {
+              "d": "6",
+              "r": 6
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "pankaj",
+              "balls": 24,
+              "runs": 135,
+              "wickets": 0
+            },
+            {
+              "name": "jyoti",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "devansh",
+              "balls": 18,
+              "runs": 106,
+              "wickets": 0
+            },
+            {
+              "name": "soray",
+              "balls": 6,
+              "runs": 36,
+              "wickets": 0
+            },
+            {
+              "name": "akshita",
+              "balls": 6,
+              "runs": 34,
+              "wickets": 0
+            }
+          ],
+          "currentBowlerIndex": 2,
+          "needNextBowler": true
+        },
+        {
+          "battingTeam": "bicentiannll",
+          "bowlingTeam": "nashua",
+          "batters": [
+            {
+              "name": "fj",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "mn",
+              "runs": 0,
+              "balls": 0,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "nb",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "m;",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": ",",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "lannnn",
+              "runs": 0,
+              "balls": 3,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "m3",
+              "runs": 0,
+              "balls": 2,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": null,
+              "active": true
+            },
+            {
+              "name": "bm",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            },
+            {
+              "name": "qwertyuiop1234567890-*-+987\\]][[poi",
+              "runs": 0,
+              "balls": 1,
+              "fours": 0,
+              "sixes": 0,
+              "howOut": "out",
+              "active": false
+            }
+          ],
+          "extras": {
+            "wides": 0,
+            "noBalls": 0,
+            "byes": 2,
+            "legByes": 1
+          },
+          "wickets": 9,
+          "totalRuns": 3,
+          "legalBalls": 12,
+          "completed": true,
+          "strikerIndex": 7,
+          "nonStrikerIndex": 9,
+          "needNextBatter": true,
+          "currentOverBalls": [],
+          "lastOverBalls": [
+            {
+              "d": "B",
+              "r": 1
+            },
+            {
+              "d": "B",
+              "r": 1
+            },
+            {
+              "d": "Lb",
+              "r": 1
+            },
+            {
+              "d": "W",
+              "r": 0
+            },
+            {
+              "d": "W",
+              "r": 0
+            },
+            {
+              "d": "W",
+              "r": 0
+            }
+          ],
+          "bowlers": [
+            {
+              "name": "bn",
+              "balls": 6,
+              "runs": 0,
+              "wickets": 6
+            },
+            {
+              "name": "l",
+              "balls": 6,
+              "runs": 0,
+              "wickets": 3
+            }
+          ],
+          "currentBowlerIndex": 1,
+          "needNextBowler": true
+        }
+      ],
+      "currentInningsIndex": 1,
+      "result": "nashua won by 345 runs",
+      "name": "Match 3 — 9 May 2026",
+      "matchAuth": {
+        "username": "nashua",
+        "passwordHash": "b95dc23f6f364131c864ebc430488f4f9aca9fb54bf701935f7f49a6cfdb93b1"
+      }
     }
   ],
-  "activeDraft": {
-    "id": "2026-05-09T14:49:53.347Z",
-    "date": "2026-05-09",
-    "status": "in_progress",
-    "teams": [
-      "nashua",
-      "bicentiannll"
-    ],
-    "maxOvers": 10,
-    "innings": [
-      {
-        "battingTeam": "nashua",
-        "bowlingTeam": "bicentiannll",
-        "batters": [
-          {
-            "name": "vardaan",
-            "runs": 200,
-            "balls": 35,
-            "fours": 5,
-            "sixes": 30,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "vatshal",
-            "runs": 140,
-            "balls": 25,
-            "fours": 2,
-            "sixes": 22,
-            "howOut": null,
-            "active": true
-          }
-        ],
-        "extras": {
-          "wides": 0,
-          "noBalls": 7,
-          "byes": 1,
-          "legByes": 0
-        },
-        "wickets": 0,
-        "totalRuns": 348,
-        "legalBalls": 60,
-        "completed": true,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
-        "needNextBatter": false,
-        "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "pankaj",
-            "balls": 24,
-            "runs": 135,
-            "wickets": 0
-          },
-          {
-            "name": "jyoti",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "devansh",
-            "balls": 18,
-            "runs": 106,
-            "wickets": 0
-          },
-          {
-            "name": "soray",
-            "balls": 6,
-            "runs": 36,
-            "wickets": 0
-          },
-          {
-            "name": "akshita",
-            "balls": 6,
-            "runs": 34,
-            "wickets": 0
-          }
-        ],
-        "currentBowlerIndex": 2,
-        "needNextBowler": true
-      },
-      {
-        "battingTeam": "bicentiannll",
-        "bowlingTeam": "nashua",
-        "batters": [
-          {
-            "name": "fj",
-            "runs": 0,
-            "balls": 1,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "mn",
-            "runs": 0,
-            "balls": 0,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "nb",
-            "runs": 0,
-            "balls": 1,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "m;",
-            "runs": 0,
-            "balls": 1,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
-            "runs": 0,
-            "balls": 1,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": ",",
-            "runs": 0,
-            "balls": 1,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "lannnn",
-            "runs": 0,
-            "balls": 3,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "m3",
-            "runs": 0,
-            "balls": 2,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "bm",
-            "runs": 0,
-            "balls": 1,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          },
-          {
-            "name": "qwertyuiop1234567890-*-+987\\]][[poi",
-            "runs": 0,
-            "balls": 1,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": "out",
-            "active": false
-          }
-        ],
-        "extras": {
-          "wides": 0,
-          "noBalls": 0,
-          "byes": 2,
-          "legByes": 1
-        },
-        "wickets": 9,
-        "totalRuns": 3,
-        "legalBalls": 12,
-        "completed": false,
-        "strikerIndex": 7,
-        "nonStrikerIndex": 9,
-        "needNextBatter": true,
-        "currentOverBalls": [],
-        "lastOverBalls": [
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "Lb",
-            "r": 1
-          },
-          {
-            "d": "W",
-            "r": 0
-          },
-          {
-            "d": "W",
-            "r": 0
-          },
-          {
-            "d": "W",
-            "r": 0
-          }
-        ],
-        "bowlers": [
-          {
-            "name": "bn",
-            "balls": 6,
-            "runs": 0,
-            "wickets": 6
-          },
-          {
-            "name": "l",
-            "balls": 6,
-            "runs": 0,
-            "wickets": 3
-          }
-        ],
-        "currentBowlerIndex": 1,
-        "needNextBowler": true
-      }
-    ],
-    "currentInningsIndex": 1,
-    "result": null,
-    "name": "Match 3 — 9 May 2026",
-    "matchAuth": {
-      "username": "nashua",
-      "passwordHash": "b95dc23f6f364131c864ebc430488f4f9aca9fb54bf701935f7f49a6cfdb93b1"
-    }
-  }
+  "activeDraft": null
 }

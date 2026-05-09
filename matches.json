@@ -323,10 +323,10 @@
         "batters": [
           {
             "name": "vardaan",
-            "runs": 96,
-            "balls": 17,
-            "fours": 3,
-            "sixes": 14,
+            "runs": 130,
+            "balls": 23,
+            "fours": 4,
+            "sixes": 19,
             "howOut": null,
             "active": true
           },
@@ -347,17 +347,17 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 172,
-        "legalBalls": 30,
+        "totalRuns": 206,
+        "legalBalls": 36,
         "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
           {
-            "d": "6",
-            "r": 6
+            "d": "4",
+            "r": 4
           },
           {
             "d": "6",
@@ -392,9 +392,15 @@
             "balls": 6,
             "runs": 36,
             "wickets": 0
+          },
+          {
+            "name": "devansh",
+            "balls": 6,
+            "runs": 34,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 1,
+        "currentBowlerIndex": 2,
         "needNextBowler": true
       },
       {

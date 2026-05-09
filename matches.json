@@ -332,10 +332,10 @@
           },
           {
             "name": "vatshal",
-            "runs": 106,
-            "balls": 19,
-            "fours": 1,
-            "sixes": 17,
+            "runs": 140,
+            "balls": 25,
+            "fours": 2,
+            "sixes": 22,
             "howOut": null,
             "active": true
           }
@@ -347,22 +347,14 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 278,
-        "legalBalls": 48,
+        "totalRuns": 312,
+        "legalBalls": 54,
         "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
-          {
-            "d": "Nb",
-            "r": 1
-          },
-          {
-            "d": "Nb",
-            "r": 1
-          },
           {
             "d": "4",
             "r": 4
@@ -415,13 +407,13 @@
           },
           {
             "name": "akshita",
-            "balls": 0,
-            "runs": 0,
+            "balls": 6,
+            "runs": 34,
             "wickets": 0
           }
         ],
         "currentBowlerIndex": 4,
-        "needNextBowler": false
+        "needNextBowler": true
       },
       {
         "battingTeam": "Team B",

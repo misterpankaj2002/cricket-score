@@ -472,6 +472,15 @@
             "sixes": 0,
             "howOut": "out",
             "active": false
+          },
+          {
+            "name": "lannnn",
+            "runs": 0,
+            "balls": 1,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": "out",
+            "active": false
           }
         ],
         "extras": {
@@ -480,14 +489,19 @@
           "byes": 0,
           "legByes": 0
         },
-        "wickets": 5,
+        "wickets": 6,
         "totalRuns": 0,
-        "legalBalls": 5,
+        "legalBalls": 6,
         "completed": false,
-        "strikerIndex": 5,
-        "nonStrikerIndex": 1,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 6,
         "needNextBatter": true,
-        "currentOverBalls": [
+        "currentOverBalls": [],
+        "lastOverBalls": [
+          {
+            "d": "W",
+            "r": 0
+          },
           {
             "d": "W",
             "r": 0
@@ -509,17 +523,16 @@
             "r": 0
           }
         ],
-        "lastOverBalls": [],
         "bowlers": [
           {
             "name": "bn",
-            "balls": 5,
+            "balls": 6,
             "runs": 0,
-            "wickets": 5
+            "wickets": 6
           }
         ],
         "currentBowlerIndex": 0,
-        "needNextBowler": false
+        "needNextBowler": true
       }
     ],
     "currentInningsIndex": 1,

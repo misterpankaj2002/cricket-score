@@ -323,10 +323,10 @@
         "batters": [
           {
             "name": "vardaan",
-            "runs": 66,
-            "balls": 11,
-            "fours": 0,
-            "sixes": 11,
+            "runs": 96,
+            "balls": 17,
+            "fours": 3,
+            "sixes": 14,
             "howOut": null,
             "active": true
           },
@@ -342,16 +342,16 @@
         ],
         "extras": {
           "wides": 0,
-          "noBalls": 3,
+          "noBalls": 5,
           "byes": 1,
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 104,
-        "legalBalls": 18,
+        "totalRuns": 136,
+        "legalBalls": 24,
         "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
@@ -360,12 +360,16 @@
             "r": 6
           },
           {
-            "d": "6",
-            "r": 6
+            "d": "4",
+            "r": 4
           },
           {
-            "d": "6",
-            "r": 6
+            "d": "Nb",
+            "r": 1
+          },
+          {
+            "d": "4",
+            "r": 4
           },
           {
             "d": "6",
@@ -387,8 +391,8 @@
         "bowlers": [
           {
             "name": "pankaj",
-            "balls": 18,
-            "runs": 103,
+            "balls": 24,
+            "runs": 135,
             "wickets": 0
           }
         ],

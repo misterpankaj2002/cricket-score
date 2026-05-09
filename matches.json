@@ -313,13 +313,13 @@
     "status": "in_progress",
     "teams": [
       "nashua",
-      "b"
+      "biccentiall"
     ],
     "maxOvers": 10,
     "innings": [
       {
         "battingTeam": "nashua",
-        "bowlingTeam": "b",
+        "bowlingTeam": "biccentiall",
         "batters": [
           {
             "name": "vardaan",
@@ -416,7 +416,7 @@
         "needNextBowler": true
       },
       {
-        "battingTeam": "b",
+        "battingTeam": "biccentiall",
         "bowlingTeam": "nashua",
         "batters": [],
         "extras": {

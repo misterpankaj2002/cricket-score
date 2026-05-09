@@ -490,6 +490,15 @@
             "sixes": 0,
             "howOut": null,
             "active": true
+          },
+          {
+            "name": "bm",
+            "runs": 0,
+            "balls": 1,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": "out",
+            "active": false
           }
         ],
         "extras": {
@@ -498,11 +507,11 @@
           "byes": 2,
           "legByes": 1
         },
-        "wickets": 7,
+        "wickets": 8,
         "totalRuns": 3,
-        "legalBalls": 10,
+        "legalBalls": 11,
         "completed": false,
-        "strikerIndex": 6,
+        "strikerIndex": 8,
         "nonStrikerIndex": 7,
         "needNextBatter": true,
         "currentOverBalls": [
@@ -517,6 +526,10 @@
           {
             "d": "Lb",
             "r": 1
+          },
+          {
+            "d": "W",
+            "r": 0
           },
           {
             "d": "W",
@@ -558,9 +571,9 @@
           },
           {
             "name": "l",
-            "balls": 4,
+            "balls": 5,
             "runs": 0,
-            "wickets": 1
+            "wickets": 2
           }
         ],
         "currentBowlerIndex": 1,

@@ -308,84 +308,37 @@
     }
   ],
   "activeDraft": {
-    "id": "2026-04-02T03:41:00.965Z",
-    "date": "2026-04-02",
+    "id": "2026-05-09T14:49:53.347Z",
+    "date": "2026-05-09",
     "status": "in_progress",
     "teams": [
       "Team A",
       "Team B"
     ],
-    "maxOvers": 8,
+    "maxOvers": 10,
     "innings": [
       {
         "battingTeam": "Team A",
         "bowlingTeam": "Team B",
-        "batters": [
-          {
-            "name": "111",
-            "runs": 11,
-            "balls": 3,
-            "fours": 1,
-            "sixes": 1,
-            "howOut": null,
-            "active": true
-          },
-          {
-            "name": "22",
-            "runs": 2,
-            "balls": 2,
-            "fours": 0,
-            "sixes": 0,
-            "howOut": null,
-            "active": true
-          }
-        ],
+        "batters": [],
         "extras": {
           "wides": 0,
           "noBalls": 0,
-          "byes": 1,
+          "byes": 0,
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 14,
-        "legalBalls": 5,
-        "completed": true,
+        "totalRuns": 0,
+        "legalBalls": 0,
+        "completed": false,
         "strikerIndex": 0,
         "nonStrikerIndex": 1,
         "needNextBatter": false,
-        "currentOverBalls": [
-          {
-            "d": "1",
-            "r": 1
-          },
-          {
-            "d": "2",
-            "r": 2
-          },
-          {
-            "d": "B",
-            "r": 1
-          },
-          {
-            "d": "4",
-            "r": 4
-          },
-          {
-            "d": "6",
-            "r": 6
-          }
-        ],
+        "currentOverBalls": [],
         "lastOverBalls": [],
-        "bowlers": [
-          {
-            "name": "333",
-            "balls": 5,
-            "runs": 13,
-            "wickets": 0
-          }
-        ],
-        "currentBowlerIndex": 0,
-        "needNextBowler": false
+        "bowlers": [],
+        "currentBowlerIndex": -1,
+        "needNextBowler": true
       },
       {
         "battingTeam": "Team B",
@@ -411,12 +364,12 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 1,
+    "currentInningsIndex": 0,
     "result": null,
-    "name": "Match 3 — 1 Apr 2026",
+    "name": "Match 3 — 9 May 2026",
     "matchAuth": {
-      "username": "11",
-      "passwordHash": "0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c"
+      "username": "nashua",
+      "passwordHash": "b95dc23f6f364131c864ebc430488f4f9aca9fb54bf701935f7f49a6cfdb93b1"
     }
   }
 }

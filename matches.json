@@ -323,10 +323,10 @@
         "batters": [
           {
             "name": "vardaan",
-            "runs": 164,
-            "balls": 29,
+            "runs": 200,
+            "balls": 35,
             "fours": 5,
-            "sixes": 24,
+            "sixes": 30,
             "howOut": null,
             "active": true
           },
@@ -347,17 +347,17 @@
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 312,
-        "legalBalls": 54,
-        "completed": false,
-        "strikerIndex": 0,
-        "nonStrikerIndex": 1,
+        "totalRuns": 348,
+        "legalBalls": 60,
+        "completed": true,
+        "strikerIndex": 1,
+        "nonStrikerIndex": 0,
         "needNextBatter": false,
         "currentOverBalls": [],
         "lastOverBalls": [
           {
-            "d": "4",
-            "r": 4
+            "d": "6",
+            "r": 6
           },
           {
             "d": "6",
@@ -395,8 +395,8 @@
           },
           {
             "name": "devansh",
-            "balls": 12,
-            "runs": 70,
+            "balls": 18,
+            "runs": 106,
             "wickets": 0
           },
           {
@@ -412,7 +412,7 @@
             "wickets": 0
           }
         ],
-        "currentBowlerIndex": 4,
+        "currentBowlerIndex": 2,
         "needNextBowler": true
       },
       {
@@ -439,7 +439,7 @@
         "needNextBowler": true
       }
     ],
-    "currentInningsIndex": 0,
+    "currentInningsIndex": 1,
     "result": null,
     "name": "Match 3 — 9 May 2026",
     "matchAuth": {

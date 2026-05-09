@@ -503,11 +503,11 @@
           {
             "name": "qwertyuiop1234567890-*-+987\\]][[poi",
             "runs": 0,
-            "balls": 0,
+            "balls": 1,
             "fours": 0,
             "sixes": 0,
-            "howOut": null,
-            "active": true
+            "howOut": "out",
+            "active": false
           }
         ],
         "extras": {
@@ -516,14 +516,15 @@
           "byes": 2,
           "legByes": 1
         },
-        "wickets": 8,
+        "wickets": 9,
         "totalRuns": 3,
-        "legalBalls": 11,
+        "legalBalls": 12,
         "completed": false,
-        "strikerIndex": 9,
-        "nonStrikerIndex": 7,
-        "needNextBatter": false,
-        "currentOverBalls": [
+        "strikerIndex": 7,
+        "nonStrikerIndex": 9,
+        "needNextBatter": true,
+        "currentOverBalls": [],
+        "lastOverBalls": [
           {
             "d": "B",
             "r": 1
@@ -535,28 +536,6 @@
           {
             "d": "Lb",
             "r": 1
-          },
-          {
-            "d": "W",
-            "r": 0
-          },
-          {
-            "d": "W",
-            "r": 0
-          }
-        ],
-        "lastOverBalls": [
-          {
-            "d": "W",
-            "r": 0
-          },
-          {
-            "d": "W",
-            "r": 0
-          },
-          {
-            "d": "W",
-            "r": 0
           },
           {
             "d": "W",
@@ -580,13 +559,13 @@
           },
           {
             "name": "l",
-            "balls": 5,
+            "balls": 6,
             "runs": 0,
-            "wickets": 2
+            "wickets": 3
           }
         ],
         "currentBowlerIndex": 1,
-        "needNextBowler": false
+        "needNextBowler": true
       }
     ],
     "currentInningsIndex": 1,

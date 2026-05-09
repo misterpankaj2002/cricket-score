@@ -499,6 +499,15 @@
             "sixes": 0,
             "howOut": "out",
             "active": false
+          },
+          {
+            "name": "qwertyuiop1234567890-*-+987\\]][[poi",
+            "runs": 0,
+            "balls": 0,
+            "fours": 0,
+            "sixes": 0,
+            "howOut": null,
+            "active": true
           }
         ],
         "extras": {
@@ -511,9 +520,9 @@
         "totalRuns": 3,
         "legalBalls": 11,
         "completed": false,
-        "strikerIndex": 8,
+        "strikerIndex": 9,
         "nonStrikerIndex": 7,
-        "needNextBatter": true,
+        "needNextBatter": false,
         "currentOverBalls": [
           {
             "d": "B",

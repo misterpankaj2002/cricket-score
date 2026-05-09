@@ -333,7 +333,7 @@
           {
             "name": "vatshal",
             "runs": 0,
-            "balls": 0,
+            "balls": 1,
             "fours": 0,
             "sixes": 0,
             "howOut": null,
@@ -343,17 +343,22 @@
         "extras": {
           "wides": 0,
           "noBalls": 0,
-          "byes": 0,
+          "byes": 1,
           "legByes": 0
         },
         "wickets": 0,
-        "totalRuns": 36,
-        "legalBalls": 6,
+        "totalRuns": 37,
+        "legalBalls": 7,
         "completed": false,
-        "strikerIndex": 1,
-        "nonStrikerIndex": 0,
+        "strikerIndex": 0,
+        "nonStrikerIndex": 1,
         "needNextBatter": false,
-        "currentOverBalls": [],
+        "currentOverBalls": [
+          {
+            "d": "B",
+            "r": 1
+          }
+        ],
         "lastOverBalls": [
           {
             "d": "6",
@@ -383,13 +388,13 @@
         "bowlers": [
           {
             "name": "pankaj",
-            "balls": 6,
+            "balls": 7,
             "runs": 36,
             "wickets": 0
           }
         ],
         "currentBowlerIndex": 0,
-        "needNextBowler": true
+        "needNextBowler": false
       },
       {
         "battingTeam": "Team B",

@@ -422,11 +422,11 @@
           {
             "name": "fj",
             "runs": 0,
-            "balls": 0,
+            "balls": 1,
             "fours": 0,
             "sixes": 0,
-            "howOut": null,
-            "active": true
+            "howOut": "out",
+            "active": false
           },
           {
             "name": "mn",
@@ -444,18 +444,30 @@
           "byes": 0,
           "legByes": 0
         },
-        "wickets": 0,
+        "wickets": 1,
         "totalRuns": 0,
-        "legalBalls": 0,
+        "legalBalls": 1,
         "completed": false,
         "strikerIndex": 0,
         "nonStrikerIndex": 1,
-        "needNextBatter": false,
-        "currentOverBalls": [],
+        "needNextBatter": true,
+        "currentOverBalls": [
+          {
+            "d": "W",
+            "r": 0
+          }
+        ],
         "lastOverBalls": [],
-        "bowlers": [],
-        "currentBowlerIndex": -1,
-        "needNextBowler": true
+        "bowlers": [
+          {
+            "name": "bn",
+            "balls": 1,
+            "runs": 0,
+            "wickets": 1
+          }
+        ],
+        "currentBowlerIndex": 0,
+        "needNextBowler": false
       }
     ],
     "currentInningsIndex": 1,

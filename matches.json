@@ -412,10 +412,16 @@
             "balls": 6,
             "runs": 36,
             "wickets": 0
+          },
+          {
+            "name": "akshita",
+            "balls": 0,
+            "runs": 0,
+            "wickets": 0
           }
         ],
-        "currentBowlerIndex": 2,
-        "needNextBowler": true
+        "currentBowlerIndex": 4,
+        "needNextBowler": false
       },
       {
         "battingTeam": "Team B",
